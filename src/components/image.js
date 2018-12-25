@@ -1,6 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import PropTypes from 'prop-types';
 
 /**
  * Generates an image with lazy loading. The images would automatically optimised. 
@@ -43,4 +44,9 @@ const Image = (props) => (
     }}
   />
 )
+
+Image.propTypes = {
+  filename: PropTypes.string.isRequired,
+}
+
 export default Image
