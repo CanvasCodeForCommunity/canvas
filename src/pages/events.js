@@ -55,36 +55,4 @@ class EventsPage extends Component {
   }
 }
 
-const eventsGrid = classes => {
-  events.map((event, i) => (
-    <div>
-      {/* <EventCardComponent
-      name={event.name}
-      location={event.location}
-      description={event.description}
-      cover_img={event.cover_img} /> */}
-      <Grid item xs={12}>
-        <Paper className={classes.paper}>xs=12</Paper>
-      </Grid>
-    </div>
-  ))
-}
-
-// query for all cover image - a cover image consist of a suffix "-cover"
-const query = graphql`
-  query {
-    images: allFile(
-      sort: { order: ASC, fields: [absolutePath] }
-      filter: { relativePath: { regex: "/.*-cover.*/" } }
-    ) {
-      edges {
-        node {
-          relativePath
-          name
-        }
-      }
-    }
-  }
-`
-
 export default withStyles(styles)(EventsPage)
