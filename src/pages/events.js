@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -7,6 +8,8 @@ import SEO from '../components/seo';
 
 import EventCardComponent from '../components/EventCardComponent';
 import EventHeaderComponent from '../components/EventHeaderComponent';
+
+import withRoot from '../components/withRoot';
 
 const styles = theme => ({
   root: {
@@ -26,12 +29,12 @@ class EventsPage extends Component {
 
   eventsGrid = (classes, data) => {
     const events = data.events.edges;
-    console.log('events', events);
     return (
       <div className={classes.root}>
         <Grid container spacing={24}>
           {events.map((event, index) => (
             <EventCardComponent
+              key={index}
               to={event.node.fields.slug}
               title={event.node.frontmatter.title}
               location={event.node.frontmatter.location}
@@ -60,7 +63,7 @@ class EventsPage extends Component {
   }
 }
 
-export default withStyles(styles)(EventsPage);
+export default withRoot(withStyles(styles)(EventsPage));
 
 export const pageQuery = graphql`
   query HomeQuery {
