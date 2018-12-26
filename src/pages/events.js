@@ -23,9 +23,6 @@ const styles = theme => ({
 });
 
 class EventsPage extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   eventsGrid = (classes, data) => {
     const events = data.events.edges;

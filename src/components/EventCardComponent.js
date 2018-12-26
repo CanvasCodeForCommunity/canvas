@@ -18,9 +18,7 @@ const styles = theme => ({
 });
 
 class EventCardComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
+  
   render() {
     const { to, title, location, description, cover_img } = this.props;
     const { classes } = this.props;

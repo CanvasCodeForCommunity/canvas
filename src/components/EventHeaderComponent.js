@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { primary } from '../utils/Colors';
+import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -25,9 +26,7 @@ const styles = theme => ({
 });
 
 class EventHeaderComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
+  
   render() {
     const { siteTitle, siteSecondaryTitle } = this.props;
     const { classes } = this.props;
@@ -47,5 +46,10 @@ class EventHeaderComponent extends Component {
     );
   }
 }
+
+EventHeaderComponent.propTypes = {
+  siteTitle: PropTypes.string.isRequired,
+  siteSecondaryTitle: PropTypes.string.isRequired,
+};
 
 export default withStyles(styles)(EventHeaderComponent);
