@@ -6,6 +6,9 @@ import SEO from '../components/seo';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
+import ImageCardComponent from '../components/ImageCardComponent';
+import ImageHeaderComponent from '../components/ImageHeaderComponent';
+
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -21,6 +24,17 @@ const styles = theme => ({
 });
 
 class IndividualEvent extends Component {
+  createImageGrid = (classes, images) => {
+    return (
+      <div className={classes.root}>
+        <Grid container spacing={16}>
+          {images.map((image, index) => (
+            <ImageCardComponent cover_img={image.node.relativePath} />
+          ))}
+        </Grid>
+      </div>
+    );
+  };
   render() {
     const { classes } = this.props;
     const { data } = this.props;
@@ -28,12 +42,14 @@ class IndividualEvent extends Component {
     const images = data.images.edges;
     return (
       <Layout>
-        <SEO title="Events" />
-        <div className={classes.root}>
-          <span>{event.title}</span>
-          <span>{event.description}</span>
-          <span>{event.location}</span>
-        </div>
+        <SEO title={event.title} />
+        <ImageHeaderComponent
+          siteTitle={event.title}
+          location={event.location}
+          siteDescription={event.description}
+          date={event.date}
+        />
+        {this.createImageGrid(classes, images)}
       </Layout>
     );
   }
