@@ -9,6 +9,8 @@ import { withStyles } from '@material-ui/core/styles';
 import ImageCardComponent from '../components/ImageCardComponent';
 import ImageHeaderComponent from '../components/ImageHeaderComponent';
 
+import withRoot from '../components/withRoot';
+
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -56,7 +58,7 @@ class IndividualEvent extends Component {
 }
 
 //make this component available to the app
-export default withStyles(styles)(IndividualEvent);
+export default withRoot(withStyles(styles)(IndividualEvent));
 
 //query for index.md for that event and the images with it.
 export const pageQuery = graphql`
