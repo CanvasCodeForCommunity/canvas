@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import Grid from '@material-ui/core/Grid'
-import { withStyles } from '@material-ui/core/styles'
+import React, { Component } from 'react';
+import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles';
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-import EventCardComponent from '../components/EventCardComponent'
-import EventHeaderComponent from '../components/EventHeaderComponent'
+import EventCardComponent from '../components/EventCardComponent';
+import EventHeaderComponent from '../components/EventHeaderComponent';
 
 const styles = theme => ({
   root: {
@@ -20,16 +20,16 @@ const styles = theme => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
-})
+});
 
 class EventsPage extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   eventsGrid = (classes, data) => {
     const events = data.events.edges;
-    console.log('events',events);
+    console.log('events', events);
     return (
       <div className={classes.root}>
         <Grid container spacing={24}>
@@ -44,12 +44,12 @@ class EventsPage extends Component {
           ))}
         </Grid>
       </div>
-    )
-  }
+    );
+  };
 
   render() {
-    const { classes } = this.props
-    const { data } = this.props
+    const { classes } = this.props;
+    const { data } = this.props;
     return (
       <Layout>
         <SEO title="Events" />
@@ -59,11 +59,11 @@ class EventsPage extends Component {
         />
         {this.eventsGrid(classes, data)}
       </Layout>
-    )
+    );
   }
 }
 
-export default withStyles(styles)(EventsPage)
+export default withStyles(styles)(EventsPage);
 
 export const pageQuery = graphql`
   query HomeQuery {
@@ -88,4 +88,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

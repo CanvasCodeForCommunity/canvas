@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { primary } from '../utils/Colors'
+import React, { Component } from 'react';
+import { primary } from '../utils/Colors';
 
-import { withStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   header: {
@@ -21,16 +21,16 @@ const styles = theme => ({
   },
   whiteText: {
     color: 'white',
-  }
-})
+  },
+});
 
 class EventHeaderComponent extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
   render() {
-    const { siteTitle, siteSecondaryTitle } = this.props
-    const { classes } = this.props
+    const { siteTitle, siteSecondaryTitle } = this.props;
+    const { classes } = this.props;
 
     return (
       <div className={classes.header}>
@@ -39,11 +39,13 @@ class EventHeaderComponent extends Component {
             {siteTitle}
           </Typography>
 
-          <Typography variant="body1" className={classes.whiteText}>{siteSecondaryTitle}</Typography>
+          <Typography variant="body1" className={classes.whiteText}>
+            {siteSecondaryTitle}
+          </Typography>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default withStyles(styles)(EventHeaderComponent)
+export default withStyles(styles)(EventHeaderComponent);
