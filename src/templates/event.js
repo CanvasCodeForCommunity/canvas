@@ -1,24 +1,46 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-class Event extends Component {
- 
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+
+import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    margin: '0 auto',
+    maxWidth: 960,
+    padding: '1.45rem 1.0875rem',
+  },
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+});
+
+class IndividualEvent extends Component {
   render() {
+    const { classes } = this.props;
     const { data } = this.props;
-    console.log('data', data)
     const event = data.event.frontmatter;
     const images = data.images.edges;
     return (
-      <div>
-        <span>{event.title}</span>
-        <span>{event.description}</span>
-        <span>{event.location}</span>
-      </div>
-    )
+      <Layout>
+        <SEO title="Events" />
+        <div className={classes.root}>
+          <span>{event.title}</span>
+          <span>{event.description}</span>
+          <span>{event.location}</span>
+        </div>
+      </Layout>
+    );
   }
 }
 
 //make this component available to the app
-export default Event
+export default withStyles(styles)(IndividualEvent);
 
 //query for index.md for that event and the images with it.
 export const pageQuery = graphql`
@@ -54,4 +76,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
