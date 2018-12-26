@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import Image from '../components/image'
 
@@ -21,16 +22,16 @@ class EventCardComponent extends Component {
     super(props)
   }
   render() {
-    const { name, location, description, cover_img } = this.props
+    const { to, title, location, description, cover_img } = this.props
     const { classes } = this.props
     return (
       <Grid item xs={12} sm={4}>
         <Card className={classes.card}>
-          <CardActionArea>
+          <CardActionArea component={Link} to={to}>
             <Image filename={cover_img} />
             <CardContent>
               <Typography variant="h6" component="h2">
-                {name}
+                {title}
               </Typography>
               <Typography variant="body2">{location}</Typography>
 
@@ -46,7 +47,7 @@ class EventCardComponent extends Component {
 }
 
 EventCardComponent.propTypes = {
-  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   cover_img: PropTypes.string.isRequired,
