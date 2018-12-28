@@ -131,12 +131,16 @@ class Header extends Component {
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
             <div className={classes.sectionMobile}>
-              <IconButton aria-haspopup="true" onClick={this.toggleDrawer('left', true)} color="inherit">
+              <IconButton 
+                onClick={this.toggleDrawer('left', true)} 
+                color="inherit" 
+                aria-label="Menu"
+              >
                 <MenuIcon color="primary"/>
               </IconButton>
             </div>
 
-            <Typography variant="title" noWrap>
+            <Typography variant="h6" noWrap>
               <Link to="/" className={classes.links}>
                 { siteTitle }
               </Link>
@@ -153,7 +157,10 @@ class Header extends Component {
               </Button>
             </div>
 
-            <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
+            <Drawer 
+              open={this.state.left} 
+              onClose={this.toggleDrawer('left', false)}
+            >
               <div
                 tabIndex={0}
                 role="button"
@@ -163,6 +170,7 @@ class Header extends Component {
                 {mobileDrawerItems}
               </div>
             </Drawer>
+            
           </Toolbar>
         </AppBar>
       </div>
