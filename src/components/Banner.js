@@ -12,36 +12,52 @@ import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
     root: {
-        padding: '8rem 6rem 12rem 6rem',
+        padding: '8rem 2rem 11rem 2rem',
         background: `url(${CoverImage})`,
         background: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), ' + `url(${CoverImage})`,
 	    backgroundRepeat: 'no-repeat',
 	    backgroundSize: 'cover',
         backgroundPosition: 'center',
+        [theme.breakpoints.up('md')]: {
+            padding: '8rem 6rem 12rem 6rem',
+        },
     },
     info: {
-        [theme.breakpoints.up('md')]: {
-            width: '50%',
+        [theme.breakpoints.up('sm')]: {
+            width: '55%',
         },
     },
     title: {
-        lineHeight: 1.5,
+        lineHeight: 1.25,
         fontWeight: 700,
-        color: '#fff'
+        color: '#fff',
+        fontSize: '1.75rem',
+        [theme.breakpoints.up('md')]: {
+            fontSize: '2.125rem',
+            lineHeight: 1.5
+        },
     },
     description: {
         marginBottom: 15,
-        color: '#fff'
+        color: '#fff',
+        fontSize: '1rem',
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1.25rem',
+        },
     },
     btn: {
         backgroundColor: '#fff',
         color: primary,
         marginRight: 15,
-        padding: '10px 25px',
+        marginBottom: 15,
+        padding: '8px 15px',
         textTransform: 'capitalize',
         '&:hover' : {
             backgroundColor: 'rgba(255, 255, 255, 0.8)'
-        }
+        },
+        [theme.breakpoints.up('md')]: {
+            padding: '10px 25px',
+        },
     },
     btnCTA: {
         backgroundColor: primary,
@@ -59,7 +75,7 @@ const styles = theme => ({
 class Banner extends Component {
 
 render() {
-    const { title, description, btnOneText, btnOneLink, btnTwoText, btnTwoLink, cover_img } = this.props;
+    const { title, description, btnOneText, btnOneLink, btnTwoText, btnTwoLink } = this.props;
     const { classes } = this.props;
     return (
         <div className={classes.root}>
