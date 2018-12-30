@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import Image from '../components/image';
+import Image from './image';
 
 import { primary, hoverPrimary } from '../utils/Colors';
 import CoverImage from '../images/cover.jpg'
@@ -57,14 +57,19 @@ const styles = theme => ({
         },
         [theme.breakpoints.up('md')]: {
             padding: '10px 25px',
+            marginRight: 15,
         },
     },
     btnCTA: {
         backgroundColor: primary,
         color: '#fff',
+        marginRight: 0,
         '&:hover': {
             backgroundColor: hoverPrimary
-        }
+        },
+        [theme.breakpoints.up('md')]: {
+            marginRight: 15,
+        },
     },
     links: {
         textDecoration: 'none',
@@ -72,7 +77,7 @@ const styles = theme => ({
     },
 });
 
-class Banner extends Component {
+class BannerComponent extends Component {
 
 render() {
     const { title, description, btnOneText, btnOneLink, btnTwoText, btnTwoLink } = this.props;
@@ -97,7 +102,7 @@ render() {
 }
 }
 
-Banner.propTypes = {
+BannerComponent.propTypes = {
 title: PropTypes.string.isRequired,
 btnOneText: PropTypes.string.isRequired,
 btnOneLink: PropTypes.string.isRequired,
@@ -106,4 +111,4 @@ btnTwoLink: PropTypes.string.isRequired,
 };
 
 //make this component available to the app
-export default withStyles(styles)(Banner);
+export default withStyles(styles)(BannerComponent);
