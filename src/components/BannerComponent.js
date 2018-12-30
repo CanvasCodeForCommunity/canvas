@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import Image from './image';
+import BannerImage from './BannerImage';
 
 import { primary, hoverPrimary } from '../utils/Colors';
-import CoverImage from '../images/cover.jpg'
+import CoverImage from '../images/home_cover.jpg'
 
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -12,15 +12,20 @@ import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
     root: {
+        position: 'relative',
         padding: '8rem 2rem 11rem 2rem',
-        background: `url(${CoverImage})`,
-        background: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), ' + `url(${CoverImage})`,
-	    backgroundRepeat: 'no-repeat',
-	    backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        background: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))',
         [theme.breakpoints.up('md')]: {
             padding: '8rem 6rem 12rem 6rem',
         },
+    },
+    bgImg: {
+        position: 'absolute !important',
+        top: 0,
+        left: 0,
+        height: '100%',
+        width: '100%',
+        zIndex: '-1',
     },
     info: {
         [theme.breakpoints.up('sm')]: {
@@ -84,6 +89,7 @@ render() {
     const { classes } = this.props;
     return (
         <div className={classes.root}>
+            <BannerImage filename={'home_cover.jpg'} classProps={classes.bgImg}/>
             <div className={classes.info}>
                 <Typography variant="h4" className={classes.title} gutterBottom>{title}</Typography>
                 <Typography variant="h6" className={classes.description}>{description}</Typography>
