@@ -5,9 +5,12 @@ import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
 
-import Banner from '../components/Banner';
+import BannerComponent from '../components/BannerComponent';
+import LookingAheadComponent from  '../components/LookingAheadComponent';
 
 import 'typeface-roboto';
+
+import withRoot from '../components/withRoot';
 
 const IndexPage = () => (
   <Layout>
@@ -20,7 +23,7 @@ const IndexPage = () => (
     </div>
     <Link to="/page-2/">Go to page 2</Link>*/}  
 
-    <Banner 
+    <BannerComponent 
       title="Enriching the Community with Computing."
       description = "Every bits count."
       btnOneText = "Browse Events"
@@ -28,7 +31,8 @@ const IndexPage = () => (
       btnTwoText = "Contact Us"
       btnTwoLink = "contact-us"
     />
+    <LookingAheadComponent/>
   </Layout>
 )
 
-export default IndexPage
+export default withRoot(IndexPage)
