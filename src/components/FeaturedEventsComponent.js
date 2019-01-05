@@ -4,7 +4,6 @@ import FeaturedEventCarouselComponent from './FeaturedEventCarouselComponent'
 
 import { withStyles } from '@material-ui/core/styles';
 
-// import Carousel from 'nuka-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
@@ -41,6 +40,7 @@ class FeaturedEventsComponent extends Component {
           autoPlay
           infiniteLoop
           showStatus={false}
+          showThumbs={false}
           interval={4000}
         >
           {this.featuredEventsCarousel(classes, data)}
