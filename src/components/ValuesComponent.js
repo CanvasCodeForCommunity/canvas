@@ -35,7 +35,7 @@ class ValuesComponent extends Component {
       <Grid 
         item 
         xs={12}
-        md={5}
+        sm={5}
         className={classes.root}
       >
         <Typography variant="h5" className={classes.title}>{title}</Typography>
