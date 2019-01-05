@@ -1,29 +1,50 @@
 import React, { Component } from 'react';
-import Image from './image'
 
-import { primary } from '../utils/Colors';
+import FeaturedEventCarouselComponent from './FeaturedEventCarouselComponent'
 
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+
+// import Carousel from 'nuka-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+
+import '../css/carousel.css'
 
 const styles = theme => ({
   root: {
-    padding: '8rem 2rem 11rem 2rem',
-    background: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))',
-    [theme.breakpoints.up('md')]: {
-        padding: '8rem 6rem 12rem 6rem',
-    },
+
   }
 })
 
 class FeaturedEventsComponent extends Component {
+  
+  featuredEventsCarousel = (classes, data) => {
+    const featuredEvents = data.edges;
+
+    return (
+        featuredEvents.map((featuredEvent, index) => (
+          <FeaturedEventCarouselComponent
+            title={featuredEvent.node.frontmatter.title}
+            backgroundImagePath={featuredEvent.node.frontmatter.cover_img.relativePath}
+          />
+        ))
+    )
+  };
+  
   render() {
+    const { data } = this.props;
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
-        
+      <div className = {classes.root}>
+        <Carousel 
+          autoPlay
+          infiniteLoop
+          showStatus={false}
+          interval={4000}
+        >
+          {this.featuredEventsCarousel(classes, data)}
+        </Carousel>
       </div>
     )
   }

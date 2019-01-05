@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -11,7 +12,7 @@ import 'typeface-roboto';
 
 import withRoot from '../components/withRoot';
 
-const IndexPage = () => (
+const IndexPage = (props) => (
   <Layout>
     <SEO title="Home" keywords={['canvas', 'volunteer', 'singapore', 'computing']} />
 
@@ -24,9 +25,31 @@ const IndexPage = () => (
       btnTwoLink = "contact-us"
     />
     <LookingAheadComponent/>
-    <FeaturedEventsComponent/>
+    <FeaturedEventsComponent data={props.data.featuredEvents}/>
 
   </Layout>
 )
 
 export default withRoot(IndexPage)
+
+// Query for Featured Events
+export const pageQuery = graphql`
+  query FeaturedEventsQuery {
+    featuredEvents: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: {regex: "\/featured_events/"}
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            cover_img {
+                relativePath
+            }
+          }
+        }
+      }
+    }
+  }
+`;

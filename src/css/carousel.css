@@ -1,0 +1,5 @@
+/* Used to overwrite the carousel in FeaturedEventsComponent */
+
+.carousel .slide {
+    z-index: -1;
+}
