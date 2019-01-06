@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { primary } from '../utils/Colors';
+import { primary } from '../../utils/Colors';
 import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
@@ -25,10 +25,10 @@ const styles = theme => ({
   },
 });
 
-class ImageHeaderComponent extends Component {
+class EventHeaderComponent extends Component {
   
   render() {
-    const { siteTitle, location, siteDescription, date } = this.props;
+    const { siteTitle, siteSecondaryTitle } = this.props;
     const { classes } = this.props;
 
     return (
@@ -38,12 +38,8 @@ class ImageHeaderComponent extends Component {
             {siteTitle}
           </Typography>
 
-          <Typography variant="h6" className={classes.whiteText}>
-            {location} ∙ {date}
-          </Typography>
-
           <Typography variant="body1" className={classes.whiteText}>
-            {siteDescription}
+            {siteSecondaryTitle}
           </Typography>
         </div>
       </div>
@@ -51,11 +47,9 @@ class ImageHeaderComponent extends Component {
   }
 }
 
-ImageHeaderComponent.propTypes = {
+EventHeaderComponent.propTypes = {
   siteTitle: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  siteDescription: PropTypes.string.isRequired,
+  siteSecondaryTitle: PropTypes.string.isRequired,
 };
 
-export default withStyles(styles)(ImageHeaderComponent);
+export default withStyles(styles)(EventHeaderComponent);

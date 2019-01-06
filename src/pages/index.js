@@ -4,9 +4,9 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-import BannerComponent from '../components/BannerComponent';
-import LookingAheadComponent from  '../components/LookingAheadComponent';
-import FeaturedEventsComponent from '../components/FeaturedEventsComponent'
+import BannerComponent from '../components/home/banner/BannerComponent';
+import LookingAheadComponent from  '../components/home/looking_ahead/LookingAheadComponent';
+import FeaturedEventsComponent from '../components/home/featured_events/FeaturedEventsComponent'
 
 import 'typeface-roboto';
 

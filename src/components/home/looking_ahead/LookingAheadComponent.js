@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Image from '../components/image'
+import Image from '../../image'
 
-import { primary } from '../utils/Colors';
+import { primary } from '../../../utils/Colors';
 import ValuesComponent from './ValuesComponent';
 
 import { withStyles } from '@material-ui/core/styles';

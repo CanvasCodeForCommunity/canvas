@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import BannerImage from './BannerImage';
+import BannerImage from '../../BannerImage';
 
-import { primary, hoverPrimary } from '../utils/Colors';
+import { primary, hoverPrimary } from '../../../utils/Colors'
 
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';

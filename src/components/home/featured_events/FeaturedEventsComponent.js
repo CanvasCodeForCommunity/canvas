@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
-import '../css/carousel.css'
+import '../../../css/carousel.css'
 
 const styles = theme => ({
   root: {

@@ -6,8 +6,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import EventCardComponent from '../components/EventCardComponent';
-import EventHeaderComponent from '../components/EventHeaderComponent';
+import EventCardComponent from '../components/events/EventCardComponent';
+import EventHeaderComponent from '../components/events/EventHeaderComponent';
 
 import withRoot from '../components/withRoot';
 
