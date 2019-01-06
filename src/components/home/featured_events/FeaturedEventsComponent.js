@@ -24,10 +24,9 @@ class FeaturedEventsComponent extends Component {
 
   render() {
     const { data } = this.props;
-    const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
+      <div>
         <Carousel
           autoPlay
           infiniteLoop
