@@ -7,23 +7,23 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
-    root: {
-        textAlign: 'center',
-        marginBottom: 30
+  root: {
+    textAlign: 'center',
+    marginBottom: 30
+  },
+  title: {
+    marginBottom: 20,
+    fontWeight: 700,
+  },
+  icon: {
+    marginBottom: 20,
+    position: 'relative',
+    width: '100%',
+    height: 200,
+    [theme.breakpoints.up('md')]: {
+      height: 300
     },
-    title: {
-        marginBottom: 20,
-        fontWeight: 700,
-    },
-    icon: {
-        marginBottom: 20,
-        position: 'relative',
-        width: '100%',
-        height: 200,
-        [theme.breakpoints.up('md')]: {
-            height: 300
-        },
-    }
+  }
 })
 
 class ValuesComponent extends Component {
@@ -32,15 +32,15 @@ class ValuesComponent extends Component {
     const { classes } = this.props;
 
     return (
-      <Grid 
-        item 
+      <Grid
+        item
         xs={12}
         sm={5}
         className={classes.root}
       >
         <Typography variant="h5" className={classes.title}>{title}</Typography>
-        <div className = {classes.icon}>
-            {Icon}
+        <div className={classes.icon}>
+          {Icon}
         </div>
         <Typography variant="body1" className={classes.description}>{description}</Typography>
       </Grid>
@@ -50,8 +50,8 @@ class ValuesComponent extends Component {
 
 
 ValuesComponent.propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(ValuesComponent);
