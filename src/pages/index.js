@@ -1,23 +1,55 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout'
-import Image from '../components/image'
 import SEO from '../components/seo'
+
+import BannerComponent from '../components/home/banner/BannerComponent';
+import LookingAheadComponent from  '../components/home/looking_ahead/LookingAheadComponent';
+import FeaturedEventsComponent from '../components/home/featured_events/FeaturedEventsComponent'
 
 import 'typeface-roboto';
 
-const IndexPage = () => (
+import withRoot from '../components/withRoot';
+
+const IndexPage = (props) => (
   <Layout>
-    <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image filename={'gatsby-astronaut.png'}/>
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <SEO title="Home" keywords={['canvas', 'volunteer', 'singapore', 'computing']} />
+
+    <BannerComponent 
+      title="Enriching the Community with Computing."
+      description = "Every bits count."
+      btnOneText = "Browse Events"
+      btnOneLink = "events"
+      btnTwoText = "Contact Us"
+      btnTwoLink = "contact-us"
+    />
+    <LookingAheadComponent/>
+    <FeaturedEventsComponent data={props.data.featuredEvents}/>
+
   </Layout>
 )
 
-export default IndexPage
+export default withRoot(IndexPage)
+
+// Query for Featured Events
+export const pageQuery = graphql`
+  query FeaturedEventsQuery {
+    featuredEvents: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: {regex: "\/featured_events/"}
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            cover_img {
+                relativePath
+            }
+          }
+        }
+      }
+    }
+  }
+`;

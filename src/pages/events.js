@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import EventCardComponent from '../components/EventCardComponent';
-import EventHeaderComponent from '../components/EventHeaderComponent';
+import EventCardComponent from '../components/events/EventCardComponent';
+import EventHeaderComponent from '../components/events/EventHeaderComponent';
 
 import withRoot from '../components/withRoot';
 
@@ -69,6 +69,9 @@ export const pageQuery = graphql`
   query HomeQuery {
     events: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        fileAbsolutePath: {regex: "//events/"}
+      }
     ) {
       edges {
         node {

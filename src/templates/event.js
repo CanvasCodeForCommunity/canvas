@@ -6,8 +6,8 @@ import SEO from '../components/seo';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
-import ImageCardComponent from '../components/ImageCardComponent';
-import ImageHeaderComponent from '../components/ImageHeaderComponent';
+import ImageCardComponent from '../components/events/ImageCardComponent';
+import ImageHeaderComponent from '../components/events/ImageHeaderComponent';
 
 import withRoot from '../components/withRoot';
 
