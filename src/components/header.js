@@ -60,7 +60,7 @@ const styles = theme => ({
     '&:hover': {
       backgroundColor: hoverPrimary
     }
-  }, 
+  },
   joinUsBtnMobile: {
     backgroundColor: primary,
     '&:hover': {
@@ -69,25 +69,25 @@ const styles = theme => ({
   },
   joinUsBtnText: {
     color: '#fff',
-  }, 
+  },
   list: {
     width: 200
   }
 })
 
-const NavItem = ({ title, classes }) => {
+const NavItem = ({ to, title, classes }) => {
   return (
-    <Link to={"/" + title} className={classes.links}>
-      <Button color="inherit" className = {classes.navItemBtn}>{title}</Button>
+    <Link to={"/" + to} className={classes.links}>
+      <Button color="inherit" className={classes.navItemBtn}>{title}</Button>
     </Link>
   )
 }
 
-const NavItemMobile = ({ title, classes }) => {
+const NavItemMobile = ({ to, title, classes }) => {
   return (
-    <Link to={"/" + title} className={classes.links}>
+    <Link to={"/" + to} className={classes.links}>
       <ListItem button key={title}>
-        <ListItemText primary={title} className={classes.navItemBtn}/>
+        <ListItemText primary={title} className={classes.navItemBtn} />
       </ListItem>
     </Link>
   )
@@ -95,7 +95,7 @@ const NavItemMobile = ({ title, classes }) => {
 
 class Header extends Component {
   state = {
-    keft: false, 
+    keft: false,
   };
 
   toggleDrawer = (side, open) => () => {
@@ -103,62 +103,92 @@ class Header extends Component {
       [side]: open,
     });
   };
- 
+
   render() {
-   const { siteTitle } = this.props;
-   const { classes } = this.props;
+    const { siteTitle } = this.props;
+    const { classes } = this.props;
 
-   const mobileDrawerItems = (
-    <div className = {classes.list}>
-      <List>
-        <NavItemMobile title='events' classes={classes}/>
-        <NavItemMobile title='resources' classes={classes}/>
+    const mobileDrawerItems = (
+      <div className={classes.list}>
+        <List>
+          <NavItemMobile
+            to=''
+            title='home'
+            classes={classes}
+          />
 
-        <a href = "#" className = {classes.links}>
-          <ListItem button key="join-us" className={classes.joinUsBtnMobile}>
-            <ListItemText 
-              disableTypography
-              primary={<Typography variant="body1" className={classes.joinUsBtnText}>Join Us</Typography>}
-            />
-          </ListItem>
-        </a>
-      </List>
-    </div>
-   )
+          <NavItemMobile
+            to='events'
+            title='events'
+            classes={classes}
+          />
+
+          <NavItemMobile
+            to='resouces'
+            title='resources'
+            classes={classes}
+          />
+
+          <a href="#" className={classes.links}>
+            <ListItem button key="join-us" className={classes.joinUsBtnMobile}>
+              <ListItemText
+                disableTypography
+                primary={<Typography variant="body1" className={classes.joinUsBtnText}>Join Us</Typography>}
+              />
+            </ListItem>
+          </a>
+        </List>
+      </div>
+    )
 
     return (
       <div className={classes.root}>
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
             <div className={classes.sectionMobile}>
-              <IconButton 
-                onClick={this.toggleDrawer('left', true)} 
-                color="inherit" 
+              <IconButton
+                onClick={this.toggleDrawer('left', true)}
+                color="inherit"
                 aria-label="Menu"
               >
-                <MenuIcon color="primary"/>
+                <MenuIcon color="primary" />
               </IconButton>
             </div>
 
             <Typography variant="h6" noWrap>
               <Link to="/" className={classes.links}>
-                { siteTitle }
+                {siteTitle}
               </Link>
             </Typography>
-      
-            <div className = {classes.grow}></div>
-        
-            <div className = {classes.sectionDesktop}>
-              <NavItem title = "events" classes={classes}/>
-              <NavItem title = "resources" classes={classes}/>
-        
-              <Button  className = {classes.joinUsBtn}>
-                <a href = "#" className={classes.links}>Join Us</a>
+
+            <div className={classes.grow}></div>
+
+            <div className={classes.sectionDesktop}>
+              <NavItem
+                title="home"
+                to=""
+                classes={classes}
+              />
+
+              <NavItem
+                title="events"
+                to="events"
+                classes={classes}
+              />
+
+              <NavItem
+                title="resources"
+                to="resources"
+                classes={classes}
+              />
+
+              <Button className={classes.joinUsBtn}>
+                <a href="#" className={classes.links}>Join Us</a>
               </Button>
             </div>
 
-            <Drawer 
-              open={this.state.left} 
+            <Drawer
+              open={this.state.left}
               onClose={this.toggleDrawer('left', false)}
             >
               <div
@@ -170,12 +200,12 @@ class Header extends Component {
                 {mobileDrawerItems}
               </div>
             </Drawer>
-            
+
           </Toolbar>
         </AppBar>
       </div>
     )
- } 
+  }
 }
 
 Header.propTypes = {
