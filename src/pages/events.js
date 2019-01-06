@@ -69,6 +69,9 @@ export const pageQuery = graphql`
   query HomeQuery {
     events: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        fileAbsolutePath: {regex: "//events/"}
+      }
     ) {
       edges {
         node {
