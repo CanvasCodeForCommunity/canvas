@@ -48,6 +48,13 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-buildtime-timezone',
+      options: {
+        tz: 'Asia/Singapore',
+        format: 'DD/MM/YYYY, hh:mm:ssa',
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
