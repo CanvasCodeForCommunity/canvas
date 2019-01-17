@@ -18,10 +18,10 @@ const styles = theme => ({
     marginBottom: '1.25em',
     [theme.breakpoints.up('md')]: {
       fontSize: '2.125rem',
-      lineHeight: 1.5
+      lineHeight: 1.5,
     },
-  }
-})
+  },
+});
 
 class AboutUsComponent extends Component {
   render() {
@@ -29,11 +29,12 @@ class AboutUsComponent extends Component {
 
     return (
       <div className={classes.root}>
-      <Typography variant="h4" className={classes.title}>About Us</Typography>
+        <Typography variant="h4" className={classes.title}>
+          About Us
+        </Typography>
       </div>
-    )
+    );
   }
 }
-
 
 export default withStyles(styles)(AboutUsComponent);
