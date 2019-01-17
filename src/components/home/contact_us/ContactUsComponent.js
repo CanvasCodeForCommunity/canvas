@@ -17,7 +17,7 @@ const styles = theme => ({
     fontWeight: 700,
     [theme.breakpoints.up('md')]: {
       fontSize: '2.125rem',
-      lineHeight: 1.5
+      lineHeight: 1.5,
     },
   },
   description: {
@@ -35,7 +35,7 @@ const styles = theme => ({
     padding: '8px 60px',
     textTransform: 'capitalize',
     '&:hover': {
-      backgroundColor: '#1769aa'
+      backgroundColor: '#1769aa',
     },
     [theme.breakpoints.up('md')]: {
       padding: '10px 100px',
@@ -44,9 +44,9 @@ const styles = theme => ({
   },
   links: {
     textDecoration: 'none',
-    color: '#000'
+    color: '#000',
   },
-})
+});
 
 class ContactUsComponent extends Component {
   render() {
@@ -54,15 +54,18 @@ class ContactUsComponent extends Component {
 
     return (
       <div className={classes.root}>
-      <Typography variant="h4" className={classes.title}>Contact Us</Typography>
-      <Typography variant="body1" className={classes.description}>Drop us an email to reach us.</Typography>
-      <Link to={"/contact-us"} className={classes.links}>
-              <Button className={classes.btn}>Click Here</Button>
-      </Link>
+        <Typography variant="h4" className={classes.title}>
+          Contact Us
+        </Typography>
+        <Typography variant="body1" className={classes.description}>
+          Drop us an email to reach us.
+        </Typography>
+        <Link to={'/contact-us'} className={classes.links}>
+          <Button className={classes.btn}>Click Here</Button>
+        </Link>
       </div>
-    )
+    );
   }
 }
-
 
 export default withStyles(styles)(ContactUsComponent);
