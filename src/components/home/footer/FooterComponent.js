@@ -24,13 +24,13 @@ const styles = theme => ({
     color: '#fff',
     fontSize: '0.9rem',
     '&:hover': {
-      color: 'rgba(255, 255, 255, 0.8)'
+      color: 'rgba(255, 255, 255, 0.8)',
     },
     [theme.breakpoints.up('md')]: {
       fontSize: '1.1rem',
     },
   },
-})
+});
 
 class FooterComponent extends Component {
   render() {
@@ -41,18 +41,24 @@ class FooterComponent extends Component {
 
     return (
       <div className={classes.root}>
-      <Link to={"/facebook"} className={classes.links}>Facebook . </Link>
-      <Link to={"/instagram"} className={classes.links}>Instagram . </Link>
-      <Link to={"/twitter"} className={classes.links}>Twitter</Link>
-      <Typography variant="body1" className={classes.description}>
-      Updated on {buildTime}<br></br>
-      Designed and built by <u>core team</u>.<br></br>
-      Copyright &#169; 2019 - Present. All rights reserved.
-      </Typography>
+        <Link to={'/facebook'} className={classes.links}>
+          Facebook .{' '}
+        </Link>
+        <Link to={'/instagram'} className={classes.links}>
+          Instagram .{' '}
+        </Link>
+        <Link to={'/twitter'} className={classes.links}>
+          Twitter
+        </Link>
+        <Typography variant="body1" className={classes.description}>
+          Updated on {buildTime}
+          <br />
+          Designed and built by <u>core team</u>.<br />
+          Copyright &#169; 2019 - Present. All rights reserved.
+        </Typography>
       </div>
-    )
+    );
   }
 }
-
 
 export default withStyles(styles)(FooterComponent);
