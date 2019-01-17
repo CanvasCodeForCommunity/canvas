@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Image from '../../image'
+import Image from '../../image';
 
 import LogoComponent from './LogoComponent';
 
@@ -20,16 +20,16 @@ const styles = theme => ({
     marginBottom: '1.25em',
     [theme.breakpoints.up('md')]: {
       fontSize: '2.125rem',
-      lineHeight: 1.5
+      lineHeight: 1.5,
     },
   },
   logoImage: {
     maxHeight: '100%',
     '& img': {
-      objectFit: 'contain !important'
-    }
-  }
-})
+      objectFit: 'contain !important',
+    },
+  },
+});
 
 class PartnersComponent extends Component {
   render() {
@@ -37,25 +37,34 @@ class PartnersComponent extends Component {
 
     return (
       <div className={classes.root}>
-      <Typography variant="h4" className={classes.title}>Awesome Partners</Typography>
-      <Grid container justify="space-around">
-        <LogoComponent
-          Logo={<Image filename={'google.png'} classProps={classes.logoImage} />}
-        />
-        <LogoComponent
-          Logo={<Image filename={'google.png'} classProps={classes.logoImage} />}
-        />
-        <LogoComponent
-          Logo={<Image filename={'google.png'} classProps={classes.logoImage} />}
-        />
-        <LogoComponent
-          Logo={<Image filename={'google.png'} classProps={classes.logoImage} />}
-        />
-      </Grid>
+        <Typography variant="h4" className={classes.title}>
+          Awesome Partners
+        </Typography>
+        <Grid container justify="space-around">
+          <LogoComponent
+            Logo={
+              <Image filename={'google.png'} classProps={classes.logoImage} />
+            }
+          />
+          <LogoComponent
+            Logo={
+              <Image filename={'google.png'} classProps={classes.logoImage} />
+            }
+          />
+          <LogoComponent
+            Logo={
+              <Image filename={'google.png'} classProps={classes.logoImage} />
+            }
+          />
+          <LogoComponent
+            Logo={
+              <Image filename={'google.png'} classProps={classes.logoImage} />
+            }
+          />
+        </Grid>
       </div>
-    )
+    );
   }
 }
-
 
 export default withStyles(styles)(PartnersComponent);
