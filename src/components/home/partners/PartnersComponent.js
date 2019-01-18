@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Image from '../../image';
 
 import LogoComponent from './LogoComponent';
 
@@ -23,12 +22,6 @@ const styles = theme => ({
       lineHeight: 1.5,
     },
   },
-  logoImage: {
-    maxHeight: '100%',
-    '& img': {
-      objectFit: 'contain !important',
-    },
-  },
 });
 
 class PartnersComponent extends Component {
@@ -41,26 +34,10 @@ class PartnersComponent extends Component {
           Awesome Partners
         </Typography>
         <Grid container justify="space-around">
-          <LogoComponent
-            Logo={
-              <Image filename={'google.png'} classProps={classes.logoImage} />
-            }
-          />
-          <LogoComponent
-            Logo={
-              <Image filename={'google.png'} classProps={classes.logoImage} />
-            }
-          />
-          <LogoComponent
-            Logo={
-              <Image filename={'google.png'} classProps={classes.logoImage} />
-            }
-          />
-          <LogoComponent
-            Logo={
-              <Image filename={'google.png'} classProps={classes.logoImage} />
-            }
-          />
+          <LogoComponent filename={'google.png'} />
+          <LogoComponent filename={'google.png'} />
+          <LogoComponent filename={'google.png'} />
+          <LogoComponent filename={'google.png'} />
         </Grid>
       </div>
     );
