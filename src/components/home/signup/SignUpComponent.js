@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 const styles = theme => ({
   root: {
     position: 'relative',
-    padding: '5rem 2rem 5rem 2rem', //top right bottom left
+    padding: '3rem 2rem 3rem 2rem', //top right bottom left
     background: primary,
     [theme.breakpoints.up('md')]: {
       //desktop
