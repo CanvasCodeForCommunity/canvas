@@ -10,7 +10,7 @@ const styles = theme => ({
   root: {
     position: 'relative',
     padding: '8rem 1.5rem 8rem 1.5rem',
-    background: primary,
+    background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
     [theme.breakpoints.up('sm')]: {
       padding: '6rem 3rem 8rem 3rem',
     },
@@ -34,11 +34,12 @@ const styles = theme => ({
     marginRight: '2rem'
   },
   title: {
-    color: 'white'
+    color: '#f5f5f5',
+    fontWeight: 700
   },
   description: {
     marginTop: '2em',
-    color: 'white'
+    color: '#f5f5f5'
   }
 })
 
@@ -48,6 +49,7 @@ class TopComponent extends Component {
 
     return (
       <div className={classes.root}>
+        <BannerImage filename={'about_cover.jpg'} classProps={classes.bgImg} />
         <div className={classes.info}>
           <Typography variant="h4" className={classes.title} gutterBottom>Welcome!</Typography>
           <Typography variant="h6" className={classes.description}>

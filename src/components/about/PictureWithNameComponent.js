@@ -9,15 +9,16 @@ import Image from '../image'
 
 const styles = theme => ({
 	root: {
+		marginBottom: '1.25rem',
 		[theme.breakpoints.up('sm')]: {
 			textAlign: 'center',
 			marginBottom: '1.25rem'
 		}
 	},
 	profilePictureContainer: {
-		marginBottom: '1.25rem',
 		width: '4.5rem',
 		height: '4.5rem',
+		marginBottom: '1.25rem',
 		[theme.breakpoints.up('sm')]: {
 			margin: '0 auto 1.25rem auto',
 		},
@@ -44,7 +45,7 @@ class PictureWithNameComponent extends Component {
 		const { classes } = this.props;
 
 		return (
-			<Grid item xs={12} sm={3} className={classes.root}>
+			<Grid item xs={6} sm={3} className={classes.root}>
 				<div className={classes.profilePictureContainer}>
 					<Image filename={profilePicture} classProps={classes.profilePicture} />
 				</div>
