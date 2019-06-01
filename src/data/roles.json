@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Lessons Planner",
+        "description": "Plan how the lessons will be laid out"
+    },
+    {
+        "name": "Classroom Tutors",
+        "description": "Aid students in the process of learning"
+    },
+    {
+        "name": "Course Coordinator",
+        "description": "Facilitate the courses"
+    },
+    {
+        "name": "Designer",
+        "description": "Come up with beautiful design for our websites and posters for our new courses"
+    },
+    {
+        "name": "Publication",
+        "description": "Help us in publishing of our materials to allow students to access"
+    },
+    {
+        "name": "Influencer",
+        "description": "Lorem Ipsum"
+    }
+]
