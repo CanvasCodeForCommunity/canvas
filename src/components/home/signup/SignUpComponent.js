@@ -8,7 +8,10 @@ import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
   root: {
-    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: '3rem 2rem 3rem 2rem', //top right bottom left
     background: primary,
     [theme.breakpoints.up('md')]: {
@@ -19,6 +22,7 @@ const styles = theme => ({
   title: {
     color: '#fff',
     fontSize: '1.5rem',
+    textAlign: 'center',
     [theme.breakpoints.up('md')]: {
       //desktop
       fontSize: '2.125rem',
@@ -49,7 +53,7 @@ class SignUpComponent extends Component {
 
     return (
       <div className={classes.root}>
-        <Grid container justify="space-around">
+        
           <Typography className={classes.title} gutterBottom>
             {title}
           </Typography>
@@ -58,7 +62,7 @@ class SignUpComponent extends Component {
               {btnText}
             </a>
           </Button>
-        </Grid>
+        
       </div>
     );
   }
