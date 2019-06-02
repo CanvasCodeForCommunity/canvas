@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
-import { grey26 } from '../../../utils/Colors';
-
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+
+import { grey26 } from '../../../utils/Colors';
 
 const styles = theme => ({
   root: {

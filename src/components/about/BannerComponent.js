@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
-import BannerImage from '../BannerImage';
+import BannerImage from '../commons/BannerImage';
 import { whiteSmoke } from '../../utils/Colors'
 
 const styles = theme => ({

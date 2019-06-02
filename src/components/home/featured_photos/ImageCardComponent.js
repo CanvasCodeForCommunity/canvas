@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Image from '../../image';
 
 import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
-
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
+import { withStyles } from '@material-ui/core/styles';
+
+import Image from '../../commons/Image';
 
 const styles = theme => ({
   card: {
@@ -15,7 +15,7 @@ const styles = theme => ({
 });
 
 class ImageCardComponent extends Component {
-  
+
   render() {
     const { cover_img } = this.props;
     const { classes } = this.props;
@@ -24,7 +24,7 @@ class ImageCardComponent extends Component {
         <Card className={classes.card}>
           <CardActionArea>
             <Image filename={cover_img} />
-            
+
           </CardActionArea>
         </Card>
       </Grid>

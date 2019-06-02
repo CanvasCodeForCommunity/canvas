@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { primary } from '../../../utils/Colors';
-import { withStyles } from '@material-ui/core/styles';
+
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles';
+
+import { primary } from '../../../utils/Colors';
 
 const styles = theme => ({
   root: {
@@ -53,16 +54,16 @@ class SignUpComponent extends Component {
 
     return (
       <div className={classes.root}>
-        
-          <Typography className={classes.title} gutterBottom>
-            {title}
-          </Typography>
-          <Button className={classes.btn}>
-            <a href={btnLink} className={classes.links} target="_blank">
-              {btnText}
-            </a>
-          </Button>
-        
+
+        <Typography className={classes.title} gutterBottom>
+          {title}
+        </Typography>
+        <Button className={classes.btn}>
+          <a href={btnLink} className={classes.links} target="_blank">
+            {btnText}
+          </a>
+        </Button>
+
       </div>
     );
   }

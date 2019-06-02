@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
-import BannerImage from '../BannerImage';
+import BannerImage from '../commons/BannerImage';
 import { primary, hoverPrimary } from '../../utils/Colors';
 
 const styles = theme => ({

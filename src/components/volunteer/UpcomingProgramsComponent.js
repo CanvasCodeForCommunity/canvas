@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/core/styles';
 
-import Image from '../../components/image';
+import Image from '../commons/Image';
 import { royalBlue } from '../../utils/Colors'
 
 const styles = theme => ({

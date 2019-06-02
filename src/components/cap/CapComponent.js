@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 
-import BannerImage from '../BannerImage';
+import BannerImage from '../commons/BannerImage';
 import { primary, hoverPrimary, whiteSmoke } from '../../utils/Colors';
 
 const styles = theme => ({

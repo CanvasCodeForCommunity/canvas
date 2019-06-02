@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import BannerImage from '../../BannerImage';
 
-import { primary, hoverPrimary } from '../../../utils/Colors'
-
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+
+import BannerImage from '../../commons/BannerImage';
+import { primary, hoverPrimary } from '../../../utils/Colors'
 
 const styles = theme => ({
   root: {

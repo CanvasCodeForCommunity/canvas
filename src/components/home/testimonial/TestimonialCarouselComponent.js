@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import BannerImage from '../../BannerImage';
-import CircularImage from '../../CircularImage';
-import { withStyles } from '@material-ui/core/styles';
+
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+
+import CircularImage from '../../commons/CircularImage';
 
 const styles = theme => ({
   root: {

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
-import { primary } from '../../../utils/Colors';
-
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import Image from '../../image';
+import { withStyles } from '@material-ui/core/styles';
+
+import Image from '../../commons/Image';
 
 const styles = theme => ({
   root: {
@@ -25,7 +23,7 @@ const styles = theme => ({
   title: {
     color: 'black',
     fontSize: '1rem',
-    
+
     // fontWeight: 700,
     [theme.breakpoints.up('md')]: {
       fontSize: '1rem',
