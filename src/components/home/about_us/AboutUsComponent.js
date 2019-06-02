@@ -10,7 +10,7 @@ import Image from '../../image';
 
 const styles = theme => ({
   root: {
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
     padding: '3rem 2rem 3rem 2rem', //top right bottom left
     textAlign: 'center',
     [theme.breakpoints.up('md')]: {
@@ -23,7 +23,7 @@ const styles = theme => ({
     justifyContent: 'center',
   },
   title: {
-    color: '#000',
+    color: 'black',
     fontSize: '1rem',
     
     // fontWeight: 700,

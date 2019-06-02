@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 import BannerImage from '../BannerImage';
-import { primary, hoverPrimary } from '../../utils/Colors';
+import { primary, hoverPrimary, whiteSmoke } from '../../utils/Colors';
 
 const styles = theme => ({
   root: {
@@ -27,7 +27,7 @@ const styles = theme => ({
     zIndex: '-1',
   },
   title: {
-    color: '#f5f5f5',
+    color: whiteSmoke,
     fontSize: '1.75rem',
     fontWeight: 700,
     marginBottom: '1.25em',
@@ -38,7 +38,7 @@ const styles = theme => ({
   },
   description: {
     marginBottom: 50,
-    color: '#f5f5f5',
+    color: whiteSmoke,
     textAlign: 'justify',
     fontSize: '0.9rem',
     [theme.breakpoints.up('md')]: {
@@ -47,7 +47,7 @@ const styles = theme => ({
   },
   btn: {
     backgroundColor: primary,
-    color: '#fff',
+    color: 'white',
     marginBottom: 10,
     padding: '8px 24px',
     textTransform: 'capitalize',
@@ -60,10 +60,10 @@ const styles = theme => ({
   },
   links: {
     textDecoration: 'none',
-    color: '#000',
+    color: 'black',
   },
   a: {
-    color: '#fff',
+    color: 'white',
     '&:hover': {
       color: 'rgba(255, 255, 255, 0.5)',
     },

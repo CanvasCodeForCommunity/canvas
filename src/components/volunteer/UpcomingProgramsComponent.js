@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/core/styles';
 
 import Image from '../../components/image';
+import { royalBlue } from '../../utils/Colors'
 
 const styles = theme => ({
     root: {
@@ -46,7 +47,7 @@ const styles = theme => ({
         },
     },
     programTitle: {
-        color: '#3266D5'
+        color: royalBlue
     },
     programDescriptionContainer: {
         padding: 12,

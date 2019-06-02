@@ -20,7 +20,7 @@ const IndexPage = props => (
   <Layout>
     <SEO
       title="CodeForCommunity"
-      keywords={['canvas', 'volunteer', 'singapore', 'computing']}
+      keywords={['canvas', 'volunteer', 'singapore', 'computing', 'codeforcommunity']}
     />
     <BannerComponent
       title="Enriching the Community with Computing."
@@ -36,7 +36,7 @@ const IndexPage = props => (
       btnLink="https://www.google.com"
     />
     <AboutUsComponent />
-    <FeaturedPhotosComponent data={props.data.featuredPhotos}/>
+    <FeaturedPhotosComponent data={props.data.featuredPhotos} />
     <SectionComponent />
     <TestimonialComponent data={props.data.testimonial} />
     <FooterComponent data={props.data.site} />

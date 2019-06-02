@@ -13,7 +13,7 @@ const styles = theme => ({
     alignItems: 'center',
     padding: '3rem 2rem 3rem 2rem',
     height: '100%',
-    background: '#fff',
+    background: 'white',
     [theme.breakpoints.up('md')]: {
       padding: '5rem 6rem 5rem 6rem',
     },
@@ -26,7 +26,7 @@ const styles = theme => ({
   name: {
     lineHeight: 2,
     fontWeight: 700,
-    color: '#000',
+    color: 'black',
     fontSize: '1.75rem',
     [theme.breakpoints.up('md')]: {
       fontSize: '2.125rem',

@@ -17,7 +17,7 @@ const styles = theme => ({
     },
   },
   title: {
-    color: '#fff',
+    color: 'white',
     fontSize: '1rem',
     [theme.breakpoints.up('md')]: {
       //desktop

@@ -20,7 +20,7 @@ const styles = theme => ({
     },
   },
   title: {
-    color: '#fff',
+    color: 'white',
     fontSize: '1.5rem',
     textAlign: 'center',
     [theme.breakpoints.up('md')]: {
@@ -33,7 +33,7 @@ const styles = theme => ({
     color: primary,
   },
   btn: {
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
     marginTop: 10,
     padding: '10px 25px',
     '&:hover': {

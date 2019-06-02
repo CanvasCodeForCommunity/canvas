@@ -32,7 +32,7 @@ const styles = theme => ({
   title: {
     lineHeight: 1.25,
     fontWeight: 700,
-    color: '#fff',
+    color: 'white',
     fontSize: '1.75rem',
     [theme.breakpoints.up('md')]: {
       fontSize: '2.125rem',

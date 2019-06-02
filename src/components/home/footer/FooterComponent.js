@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
-import { primary } from '../../../utils/Colors';
+import { grey26 } from '../../../utils/Colors';
 
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
-    backgroundColor: '#424242',
+    backgroundColor: grey26,
     padding: '2rem 1.5rem 2rem 4rem',
   },
   description: {
     marginBottom: 10,
-    color: '#fff',
+    color: 'white',
     fontSize: '0.7rem',
     [theme.breakpoints.up('md')]: {
       fontSize: '0.9rem',
@@ -21,7 +21,7 @@ const styles = theme => ({
   },
   links: {
     textDecoration: 'none',
-    color: '#fff',
+    color: 'white',
     fontSize: '0.9rem',
     '&:hover': {
       color: 'rgba(255, 255, 255, 0.8)',

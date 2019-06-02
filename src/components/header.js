@@ -24,18 +24,18 @@ const styles = theme => ({
     width: '100%',
   },
   appBar: {
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
   },
   grow: {
     flexGrow: 1,
   },
   links: {
     textDecoration: 'none',
-    color: '#000',
+    color: 'black',
   },
   whiteLinks: {
     textDecoration: 'none',
-    color: '#fff',
+    color: 'white',
   },
   sectionDesktop: {
     display: 'none',

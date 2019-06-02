@@ -13,7 +13,7 @@ const styles = theme => ({
     textAlign: 'center',
   },
   title: {
-    color: '#000',
+    color: 'black',
     fontSize: '1.75rem',
     fontWeight: 700,
     marginBottom: '1.25em',
