@@ -5,6 +5,7 @@ import BannerComponent from '../components/volunteer/BannerComponent';
 import RolesComponent from '../components/volunteer/RolesComponent';
 import UpcomingProgramsComponent from '../components/volunteer/UpcomingProgramsComponent';
 import PastProgramsComponent from '../components/volunteer/PastProgramsComponent';
+import FooterComponent from '../components/home/footer/FooterComponent'
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -23,6 +24,7 @@ class VolunteerPage extends Component {
         <RolesComponent roles={this.props.data.roles} />
         <UpcomingProgramsComponent programs={this.props.data.upcomingPrograms} />
         <PastProgramsComponent programs={this.props.data.pastPrograms} />
+        <FooterComponent data={this.props.data.site} />
 
       </Layout>
     );
@@ -77,6 +79,9 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    site {
+      buildTimeZone
     }
   }
 `;
