@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
-    backgroundColor: primary,
+    backgroundColor: '#424242',
     padding: '2rem 1.5rem 2rem 4rem',
   },
   description: {

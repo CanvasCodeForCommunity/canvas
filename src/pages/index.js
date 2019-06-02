@@ -11,6 +11,10 @@ import AboutUsComponent from '../components/home/about_us/AboutUsComponent';
 import PartnersComponent from '../components/home/partners/PartnersComponent';
 import ContactUsComponent from '../components/home/contact_us/ContactUsComponent';
 import FooterComponent from '../components/home/footer/FooterComponent';
+import SignUpComponent from '../components/home/signup/SignUpComponent';
+import SectionComponent from '../components/home/section/SectionComponent';
+import TestimonialComponent from '../components/home/testimonial/TestimonialComponent';
+import FeaturedPhotosComponent from '../components/home/featured_photos/FeaturedPhotosComponent';
 
 import 'typeface-roboto';
 
@@ -19,10 +23,9 @@ import withRoot from '../components/withRoot';
 const IndexPage = props => (
   <Layout>
     <SEO
-      title="Home"
+      title="CodeForCommunity"
       keywords={['canvas', 'volunteer', 'singapore', 'computing']}
     />
-
     <BannerComponent
       title="Enriching the Community with Computing."
       description="Every bits count."
@@ -31,27 +34,32 @@ const IndexPage = props => (
       btnTwoText="Contact Us"
       btnTwoLink="contact-us"
     />
-    <LookingAheadComponent />
-    <FeaturedEventsComponent data={props.data.featuredEvents} />
+    <SignUpComponent
+      title="Sign up NOW to volunteer for the upcoming programs."
+      btnText="Join us"
+      btnLink="https://www.google.com"
+    />
     <AboutUsComponent />
-    <PartnersComponent />
-    <ContactUsComponent />
+    <FeaturedPhotosComponent data={props.data.featuredPhotos}/>
+    <SectionComponent />
+    <TestimonialComponent data={props.data.testimonial} />
     <FooterComponent data={props.data.site} />
   </Layout>
 );
 
 export default withRoot(IndexPage);
 
-// Query for Featured Events
+// Query for Testimonial
 export const pageQuery = graphql`
-  query FeaturedEventsQuery {
-    featuredEvents: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/featured_events/" } }
+  query TestimonialQuery {
+    testimonial: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/testimonial/" } }
     ) {
       edges {
         node {
           frontmatter {
-            title
+            name
+            quote
             cover_img {
               relativePath
             }
@@ -59,6 +67,23 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    featuredPhotos: allFile(
+      sort: { order: ASC, fields: [absolutePath] }
+      filter: {
+        absolutePath: { regex: "/featured_photos/" }
+        extension: { eq: "jpg" }
+      }
+    ) {
+      edges {
+        node {
+          relativePath
+          name
+          
+        }
+      }
+    }
+
     site {
       buildTimeZone
     }

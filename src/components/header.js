@@ -1,6 +1,6 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 import { primary, hoverPrimary } from '../utils/Colors';
 
@@ -17,6 +17,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 import { withStyles } from '@material-ui/core/styles';
 
+import codeForCommunity from '../images/codeforcommunity.png';
+
 const styles = theme => ({
   root: {
     width: '100%',
@@ -25,11 +27,15 @@ const styles = theme => ({
     backgroundColor: '#fff',
   },
   grow: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   links: {
     textDecoration: 'none',
-    color: '#000'
+    color: '#000',
+  },
+  whiteLinks: {
+    textDecoration: 'none',
+    color: '#fff',
   },
   sectionDesktop: {
     display: 'none',
@@ -48,54 +54,70 @@ const styles = theme => ({
     },
   },
   navItemBtn: {
-    textTransform: "capitalize",
+    textTransform: 'capitalize',
   },
-  joinUsBtn: {
+  navBoxItemBtn: {
     backgroundColor: primary,
-    textTransform: "capitalize",
     padding: '5px 15px',
-    '& a': {
-      color: '#fff'
+    marginLeft: 5,
+    marginRight: 5,
+    textTransform: 'capitalize',
+    '&:hover': {
+      backgroundColor: hoverPrimary,
     },
-    '&:hover': {
-      backgroundColor: hoverPrimary
-    }
-  },
-  joinUsBtnMobile: {
-    backgroundColor: primary,
-    '&:hover': {
-      backgroundColor: hoverPrimary
-    }
-  },
-  joinUsBtnText: {
-    color: '#fff',
   },
   list: {
-    width: 200
-  }
-})
+    width: 200,
+  },
+  siteIcon: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+      width: '20em',
+      height: '5em',
+    },
+  },
+  siteTitle: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
+});
 
 const NavItem = ({ to, title, classes }) => {
   return (
-    <Link to={"/" + to} className={classes.links}>
-      <Button color="inherit" className={classes.navItemBtn}>{title}</Button>
+    <Link to={'/' + to} className={classes.links}>
+      <Button color="inherit" className={classes.navItemBtn}>
+        {title}
+      </Button>
     </Link>
-  )
-}
+  );
+};
 
 const NavItemMobile = ({ to, title, classes }) => {
   return (
-    <Link to={"/" + to} className={classes.links}>
+    <Link to={'/' + to} className={classes.links}>
       <ListItem button key={title}>
         <ListItemText primary={title} className={classes.navItemBtn} />
       </ListItem>
     </Link>
-  )
-}
+  );
+};
+
+const NavBoxItem = ({ to, title, classes }) => {
+  return (
+    <Link to={'/' + to} className={classes.whiteLinks}>
+      <Button color="inherit" className={classes.navBoxItemBtn}>
+        {title}
+      </Button>
+    </Link>
+  );
+};
 
 class Header extends Component {
   state = {
-    keft: false,
+    left: false,
   };
 
   toggleDrawer = (side, open) => () => {
@@ -111,40 +133,24 @@ class Header extends Component {
     const mobileDrawerItems = (
       <div className={classes.list}>
         <List>
-          <NavItemMobile
-            to=''
-            title='home'
-            classes={classes}
-          />
+          <NavItemMobile to="" title="home" classes={classes} />
 
-          <NavItemMobile
-            to='events'
-            title='events'
-            classes={classes}
-          />
+          <NavItemMobile to="" title="About" classes={classes} />
 
-          <NavItemMobile
-            to='resouces'
-            title='resources'
-            classes={classes}
-          />
+          <NavItemMobile to="" title="Volunteer" classes={classes} />
 
-          <a href="#" className={classes.links}>
-            <ListItem button key="join-us" className={classes.joinUsBtnMobile}>
-              <ListItemText
-                disableTypography
-                primary={<Typography variant="body1" className={classes.joinUsBtnText}>Join Us</Typography>}
-              />
-            </ListItem>
-          </a>
+          <NavItemMobile to="" title="Young Coders" classes={classes} />
+
+          <NavItemMobile to="" title="CAP" classes={classes} />
         </List>
       </div>
-    )
+    );
 
     return (
       <div className={classes.root}>
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
+            {/* Hamburger icon */}
             <div className={classes.sectionMobile}>
               <IconButton
                 onClick={this.toggleDrawer('left', true)}
@@ -155,42 +161,41 @@ class Header extends Component {
               </IconButton>
             </div>
 
-            <Typography variant="h6" noWrap>
+            {/* Site icon */}
+            <Button className={classes.siteIcon} color="inherit">
+              <Link to="/" className={classes.links}>
+                <img src={codeForCommunity} />
+              </Link>
+            </Button>
+
+            {/* Site title */}
+            <Typography variant="h6" noWrap className={classes.siteTitle}>
               <Link to="/" className={classes.links}>
                 {siteTitle}
               </Link>
             </Typography>
 
-            <div className={classes.grow}></div>
+            <div className={classes.grow} />
 
+            {/* Right nav bar */}
             <div className={classes.sectionDesktop}>
-              <NavItem
-                title="home"
-                to=""
-                classes={classes}
-              />
+              <NavItem title="Home" to="" classes={classes} />
 
-              <NavItem
-                title="events"
-                to="events"
-                classes={classes}
-              />
+              <NavItem title="About" to="" classes={classes} />
 
-              <NavItem
-                title="resources"
-                to="resources"
-                classes={classes}
-              />
+              <NavItem title="Volunteer" to="" classes={classes} />
 
-              <Button className={classes.joinUsBtn}>
-                <a href="#" className={classes.links}>Join Us</a>
-              </Button>
+              <NavBoxItem title="Young Coders" to="" classes={classes} />
+
+              <NavBoxItem title="CAP" to="" classes={classes} />
             </div>
 
+            {/*  Mobile Nav Drawer */}
             <Drawer
               open={this.state.left}
               onClose={this.toggleDrawer('left', false)}
             >
+            
               <div
                 tabIndex={0}
                 role="button"
@@ -200,20 +205,19 @@ class Header extends Component {
                 {mobileDrawerItems}
               </div>
             </Drawer>
-
           </Toolbar>
         </AppBar>
       </div>
-    )
+    );
   }
 }
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: '',
-}
+};
 
 export default withStyles(styles)(Header);
