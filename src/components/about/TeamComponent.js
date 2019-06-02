@@ -9,13 +9,11 @@ import PictureWithNameComponent from './PictureWithNameComponent'
 
 const styles = theme => ({
   root: {
-    position: 'relative',
     padding: '3.5rem 2rem 5rem 2rem',
     [theme.breakpoints.up('md')]: {
       padding: '3.5rem 5rem 5rem 5rem',
-    },
-    [theme.breakpoints.up('lg')]: {
-      padding: '3.5rem 5rem 7rem 5rem',
+      maxWidth: 1440,
+      margin: '0 auto'
     },
   },
   titleDiv: {

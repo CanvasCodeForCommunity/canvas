@@ -37,11 +37,11 @@ class PictureWithWriteUpComponent extends Component {
 				<Grid item xs={12} sm={6}>
 					<div className={classes.root}>
 						<Grid container>
-							<Grid item sm={4} lg={3} xl={2}>
+							<Grid item sm={4} lg={3}>
 								<Image filename={i.node.frontmatter.profilePicture.relativePath} classProps={classes.profileImage} />
 							</Grid>
 
-							<Grid item sm={8} lg={9} xl={10} className={classes.info}>
+							<Grid item sm={8} lg={9} className={classes.info}>
 								<Typography variant="body1" className={classes.name}>{i.node.frontmatter.name}</Typography>
 								<Typography variant="body2" className={classes.title}>{i.node.frontmatter.description}</Typography>
 							</Grid>
