@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 import BannerImage from '../BannerImage';
-import { primary, hoverPrimary } from '../../utils/Colors'
 
 const styles = theme => ({
   root: {
@@ -43,7 +42,7 @@ const styles = theme => ({
   }
 })
 
-class TopComponent extends Component {
+class BannerComponent extends Component {
   render() {
     const { classes } = this.props;
 
@@ -61,4 +60,4 @@ class TopComponent extends Component {
   }
 }
 
-export default withStyles(styles)(TopComponent);
+export default withStyles(styles)(BannerComponent);
