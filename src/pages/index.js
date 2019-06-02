@@ -14,6 +14,7 @@ import FooterComponent from '../components/home/footer/FooterComponent';
 import SignUpComponent from '../components/home/signup/SignUpComponent';
 import SectionComponent from '../components/home/section/SectionComponent';
 import TestimonialComponent from '../components/home/testimonial/TestimonialComponent';
+import FeaturedPhotosComponent from '../components/home/featured_photos/FeaturedPhotosComponent';
 
 import 'typeface-roboto';
 
@@ -34,11 +35,12 @@ const IndexPage = props => (
       btnTwoLink="contact-us"
     />
     <SignUpComponent
-      title="SignUp NOW to volunteer for the upcoming programs."
+      title="Sign up NOW to volunteer for the upcoming programs."
       btnText="Join us"
       btnLink="https://www.google.com"
     />
     <AboutUsComponent />
+    <FeaturedPhotosComponent data={props.data.featuredPhotos}/>
     <SectionComponent />
     <TestimonialComponent data={props.data.testimonial} />
     <FooterComponent data={props.data.site} />
@@ -65,6 +67,23 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    featuredPhotos: allFile(
+      sort: { order: ASC, fields: [absolutePath] }
+      filter: {
+        absolutePath: { regex: "/featured_photos/" }
+        extension: { eq: "jpg" }
+      }
+    ) {
+      edges {
+        node {
+          relativePath
+          name
+          
+        }
+      }
+    }
+
     site {
       buildTimeZone
     }
