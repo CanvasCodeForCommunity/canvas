@@ -5,11 +5,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 import BannerComponent from '../components/home/banner/BannerComponent';
-import LookingAheadComponent from '../components/home/looking_ahead/LookingAheadComponent';
-import FeaturedEventsComponent from '../components/home/featured_events/FeaturedEventsComponent';
 import AboutUsComponent from '../components/home/about_us/AboutUsComponent';
-import PartnersComponent from '../components/home/partners/PartnersComponent';
-import ContactUsComponent from '../components/home/contact_us/ContactUsComponent';
 import FooterComponent from '../components/home/footer/FooterComponent';
 import SignUpComponent from '../components/home/signup/SignUpComponent';
 import SectionComponent from '../components/home/section/SectionComponent';

@@ -135,13 +135,13 @@ class Header extends Component {
         <List>
           <NavItemMobile to="" title="home" classes={classes} />
 
-          <NavItemMobile to="" title="About" classes={classes} />
+          <NavItemMobile to="about" title="About" classes={classes} />
 
-          <NavItemMobile to="" title="Volunteer" classes={classes} />
+          <NavItemMobile to="volunteer" title="Volunteer" classes={classes} />
 
-          <NavItemMobile to="" title="Young Coders" classes={classes} />
+          <NavItemMobile to="young_coder" title="Young Coders" classes={classes} />
 
-          <NavItemMobile to="" title="CAP" classes={classes} />
+          <NavItemMobile to="cap" title="CAP" classes={classes} />
         </List>
       </div>
     );
@@ -181,13 +181,13 @@ class Header extends Component {
             <div className={classes.sectionDesktop}>
               <NavItem title="Home" to="" classes={classes} />
 
-              <NavItem title="About" to="" classes={classes} />
+              <NavItem title="About" to="about" classes={classes} />
 
-              <NavItem title="Volunteer" to="" classes={classes} />
+              <NavItem title="Volunteer" to="volunteer" classes={classes} />
 
-              <NavBoxItem title="Young Coders" to="" classes={classes} />
+              <NavBoxItem title="Young Coders" to="young_coder" classes={classes} />
 
-              <NavBoxItem title="CAP" to="" classes={classes} />
+              <NavBoxItem title="CAP" to="cap" classes={classes} />
             </div>
 
             {/*  Mobile Nav Drawer */}
