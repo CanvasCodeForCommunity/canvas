@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import BannerImage from '../../BannerImage';
 
-import { primary, hoverPrimary } from '../../../utils/Colors'
-
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+
+import BannerImage from '../../commons/BannerImage';
+import { primary, hoverPrimary } from '../../../utils/Colors'
 
 const styles = theme => ({
   root: {
@@ -34,7 +34,7 @@ const styles = theme => ({
   title: {
     lineHeight: 1.25,
     fontWeight: 700,
-    color: '#fff',
+    color: 'white',
     fontSize: '1.75rem',
     [theme.breakpoints.up('md')]: {
       fontSize: '2.125rem',
@@ -43,14 +43,14 @@ const styles = theme => ({
   },
   description: {
     marginBottom: 15,
-    color: '#fff',
+    color: 'white',
     fontSize: '1rem',
     [theme.breakpoints.up('md')]: {
       fontSize: '1.25rem',
     },
   },
   btn: {
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
     color: primary,
     marginRight: 15,
     marginBottom: 15,
@@ -66,7 +66,7 @@ const styles = theme => ({
   },
   btnCTA: {
     backgroundColor: primary,
-    color: '#fff',
+    color: 'white',
     marginRight: 0,
     '&:hover': {
       backgroundColor: hoverPrimary
@@ -77,7 +77,7 @@ const styles = theme => ({
   },
   links: {
     textDecoration: 'none',
-    color: '#000'
+    color: 'black'
   },
 });
 

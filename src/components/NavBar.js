@@ -24,18 +24,18 @@ const styles = theme => ({
     width: '100%',
   },
   appBar: {
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
   },
   grow: {
     flexGrow: 1,
   },
   links: {
     textDecoration: 'none',
-    color: '#000',
+    color: 'black',
   },
   whiteLinks: {
     textDecoration: 'none',
-    color: '#fff',
+    color: 'white',
   },
   sectionDesktop: {
     display: 'none',
@@ -115,7 +115,7 @@ const NavBoxItem = ({ to, title, classes }) => {
   );
 };
 
-class Header extends Component {
+class NavBar extends Component {
   state = {
     left: false,
   };
@@ -195,7 +195,7 @@ class Header extends Component {
               open={this.state.left}
               onClose={this.toggleDrawer('left', false)}
             >
-            
+
               <div
                 tabIndex={0}
                 role="button"
@@ -212,12 +212,12 @@ class Header extends Component {
   }
 }
 
-Header.propTypes = {
+NavBar.propTypes = {
   siteTitle: PropTypes.string,
 };
 
-Header.defaultProps = {
+NavBar.defaultProps = {
   siteTitle: '',
 };
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(NavBar);

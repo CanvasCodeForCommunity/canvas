@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import Image from '../../components/image';
 
 import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
+import { withStyles } from '@material-ui/core/styles';
+
+import Image from '../commons/Image';
 
 const styles = theme => ({
   card: {
@@ -18,7 +18,7 @@ const styles = theme => ({
 });
 
 class EventCardComponent extends Component {
-  
+
   render() {
     const { to, title, location, description, cover_img } = this.props;
     const { classes } = this.props;

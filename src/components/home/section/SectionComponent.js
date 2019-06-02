@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { primary } from '../../../utils/Colors';
-import { withStyles } from '@material-ui/core/styles';
+
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles';
+
+import { primary } from '../../../utils/Colors';
 
 const styles = theme => ({
   root: {
@@ -17,7 +18,7 @@ const styles = theme => ({
     },
   },
   title: {
-    color: '#fff',
+    color: 'white',
     fontSize: '1rem',
     [theme.breakpoints.up('md')]: {
       //desktop
@@ -28,7 +29,6 @@ const styles = theme => ({
 
 class SectionComponent extends Component {
   render() {
-    const { title } = this.props;
     const { classes } = this.props;
 
     return (

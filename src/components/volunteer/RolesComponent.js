@@ -7,6 +7,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/core/styles';
 
+import { royalBlue } from '../../utils/Colors'
+
 const styles = theme => ({
   root: {
     padding: '3rem 2rem 2.5rem 2rem',
@@ -30,7 +32,7 @@ const styles = theme => ({
   },
   mobileRolesTitle: {
     fontSize: 20,
-    color: '#3266D5'
+    color: royalBlue
   },
   sectionTabletDesktop: {
     [theme.breakpoints.down('xs')]: {
@@ -39,7 +41,7 @@ const styles = theme => ({
   },
   tabletDesktopTitle: {
     fontSize: 20,
-    color: '#3266D5'
+    color: royalBlue
   },
   tabletDesktopDescription: {
     color: 'rgba(0, 0, 0, 0.54)'

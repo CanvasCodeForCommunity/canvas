@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
-import BannerImage from '../BannerImage';
+import BannerImage from '../commons/BannerImage';
 import { primary, hoverPrimary } from '../../utils/Colors';
 
 const styles = theme => ({
@@ -26,7 +26,6 @@ const styles = theme => ({
   },
   description: {
     marginBottom: '1.5em',
-    color: '#889096'
   },
   bgImgContainer: {
     position: 'relative',
@@ -52,7 +51,7 @@ const styles = theme => ({
     textTransform: "capitalize",
     padding: '7.5px 15px',
     '& a': {
-      color: '#fff'
+      color: 'white'
     },
     '&:hover': {
       backgroundColor: hoverPrimary
@@ -60,7 +59,7 @@ const styles = theme => ({
   },
   links: {
     textDecoration: 'none',
-    color: '#000'
+    color: 'black'
   },
 })
 
@@ -76,11 +75,11 @@ class BannerComponent extends Component {
               Impact the community
             </Typography>
 
-            <Typography variant="body1" className={classes.description}>
+            <Typography variant="body1" className={classes.description} color='textSecondary'>
               We are passionate about volunteering for underserved communities . We love to create code specific learning opportunities and bring the latest technologies to communities. We love to learn, share and code together. We love to give life to our ideas.
             </Typography>
 
-            <Typography variant="body1" className={classes.description}>
+            <Typography variant="body1" className={classes.description} color='textSecondary'>
               If you believe in Giving and have couple of hours to spare very week
               <br />
               If you are trustworthy, good communicator, independent and self-organised

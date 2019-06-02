@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { primary } from '../../utils/Colors';
 import PropTypes from 'prop-types';
 
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+
+import { primary } from '../../utils/Colors';
 
 const styles = theme => ({
   header: {
@@ -26,7 +27,7 @@ const styles = theme => ({
 });
 
 class ImageHeaderComponent extends Component {
-  
+
   render() {
     const { siteTitle, location, siteDescription, date } = this.props;
     const { classes } = this.props;

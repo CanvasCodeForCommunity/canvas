@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
 
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
@@ -9,6 +7,8 @@ import { withStyles } from '@material-ui/core/styles';
 import ImageCardComponent from '../components/events/ImageCardComponent';
 import ImageHeaderComponent from '../components/events/ImageHeaderComponent';
 
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 import withRoot from '../components/withRoot';
 
 const styles = theme => ({

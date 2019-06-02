@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles';
 
-import PictureWithWriteUpComponent from './PictureWithWriteUpComponent'
-import PictureWithNameComponent from './PictureWithNameComponent'
+import TeamHorizontalCardComponent from './TeamHorizontalCardComponent'
+import TeamVerticalCardComponent from './TeamVerticalCardComponent'
 
 const styles = theme => ({
   root: {
@@ -47,7 +47,7 @@ class TeamComponent extends Component {
 
     return (
       partners.map((partner, index) => (
-        <PictureWithNameComponent
+        <TeamVerticalCardComponent
           name={partner.node.frontmatter.name}
           profilePicture={partner.node.frontmatter.profilePicture.relativePath}
           club={partner.node.frontmatter.club}
@@ -71,7 +71,7 @@ class TeamComponent extends Component {
           <div className={classes.advisors}>
             <Typography variant="h5" className={classes.title} gutterBottom>Advisors</Typography>
             <div className={classes.advisorsInfo}>
-              <PictureWithWriteUpComponent
+              <TeamHorizontalCardComponent
                 info={advisors}
               />
             </div>
@@ -80,7 +80,7 @@ class TeamComponent extends Component {
           <div className={classes.operations}>
             <Typography variant="h5" className={classes.title} gutterBottom>Operations</Typography>
             <div className={classes.advisorsInfo}>
-              <PictureWithWriteUpComponent
+              <TeamHorizontalCardComponent
                 info={operations}
               />
             </div>

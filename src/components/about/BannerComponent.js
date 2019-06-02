@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
-import BannerImage from '../BannerImage';
+import BannerImage from '../commons/BannerImage';
+import { whiteSmoke } from '../../utils/Colors'
 
 const styles = theme => ({
   root: {
@@ -33,12 +34,12 @@ const styles = theme => ({
     marginRight: '2rem'
   },
   title: {
-    color: '#f5f5f5',
+    color: whiteSmoke,
     fontWeight: 700
   },
   description: {
     marginTop: '2em',
-    color: '#f5f5f5'
+    color: whiteSmoke
   }
 })
 

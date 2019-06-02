@@ -7,7 +7,7 @@ import { CardActionArea } from '@material-ui/core';
 import CardContent from '@material-ui/core/CardContent';
 import { withStyles } from '@material-ui/core/styles';
 
-import Image from '../../components/image';
+import Image from '../commons/Image';
 
 const styles = theme => ({
   root: {
