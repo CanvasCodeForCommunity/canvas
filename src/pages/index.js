@@ -23,8 +23,8 @@ const IndexPage = props => (
       keywords={['canvas', 'volunteer', 'singapore', 'computing', 'codeforcommunity']}
     />
     <BannerComponent
-      title="Enriching the Community with Computing."
-      description="Every bits count."
+      title="<Enriching the Community with Computing. />"
+      description="Every {bits} counts."
       btnOneText="Browse Events"
       btnOneLink="events"
       btnTwoText="Contact Us"
