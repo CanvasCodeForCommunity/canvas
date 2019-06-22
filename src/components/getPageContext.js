@@ -13,10 +13,8 @@ const theme = createMuiTheme({
       dark: purple[700],
     },
     secondary: {
-      light: green[300],
-      main: green[500],
-      dark: green[700],
-    },
+      main: "#000",
+    }
   },
   typography: {
     useNextVariants: true,

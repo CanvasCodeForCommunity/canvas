@@ -155,7 +155,7 @@ class NavBar extends Component {
                 color="inherit"
                 aria-label="Menu"
               >
-                <MenuIcon color="primary" />
+                <MenuIcon color="secondary" />
               </IconButton>
             </div>
 
