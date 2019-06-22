@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
 import BannerImage from '../../commons/BannerImage';
-import { primary, hoverPrimary } from '../../../utils/Colors'
+import { primary, hoverPrimary } from '../../../utils/Colors';
 
 const styles = theme => ({
   root: {
@@ -38,7 +38,7 @@ const styles = theme => ({
     fontSize: '1.75rem',
     [theme.breakpoints.up('md')]: {
       fontSize: '2.125rem',
-      lineHeight: 1.5
+      lineHeight: 1.5,
     },
   },
   description: {
@@ -57,7 +57,7 @@ const styles = theme => ({
     padding: '8px 15px',
     textTransform: 'capitalize',
     '&:hover': {
-      backgroundColor: 'rgba(255, 255, 255, 0.8)'
+      backgroundColor: 'rgba(255, 255, 255, 0.8)',
     },
     [theme.breakpoints.up('md')]: {
       padding: '10px 25px',
@@ -69,7 +69,7 @@ const styles = theme => ({
     color: 'white',
     marginRight: 0,
     '&:hover': {
-      backgroundColor: hoverPrimary
+      backgroundColor: hoverPrimary,
     },
     [theme.breakpoints.up('md')]: {
       marginRight: 15,
@@ -77,29 +77,42 @@ const styles = theme => ({
   },
   links: {
     textDecoration: 'none',
-    color: 'black'
+    color: 'black',
   },
 });
 
 class BannerComponent extends Component {
-
   render() {
-    const { title, description, btnOneText, btnOneLink, btnTwoText, btnTwoLink } = this.props;
+    const {
+      title,
+      description,
+      btnOneText,
+      btnOneLink,
+      btnTwoText,
+      btnTwoLink,
+    } = this.props;
     const { classes } = this.props;
-    
+
     return (
       <div className={classes.root}>
         <BannerImage filename={'home_cover.jpg'} classProps={classes.bgImg} />
         <div className={classes.info}>
-          <Typography variant="h4" className={classes.title} gutterBottom>{title}</Typography>
-          <Typography variant="h6" className={classes.description}>{description}</Typography>
+          <Typography variant="h4" className={classes.title} gutterBottom>
+            {title}
+          </Typography>
+          <Typography variant="h6" className={classes.description}>
+            {description}
+          </Typography>
+
           <div>
-            <Link to={"/" + btnOneLink} className={classes.links}>
+            <Link to={'/' + btnOneLink} className={classes.links}>
               <Button className={classes.btn}>{btnOneText}</Button>
             </Link>
 
-            <Link to={"/" + btnTwoLink} className={classes.links}>
-              <Button className={`${classes.btn} ${classes.btnCTA}`}>{btnTwoText}</Button>
+            <Link to={'/' + btnTwoLink} className={classes.links}>
+              <Button className={`${classes.btn} ${classes.btnCTA}`}>
+                {btnTwoText}
+              </Button>
             </Link>
           </div>
         </div>
