@@ -137,11 +137,9 @@ class NavBar extends Component {
 
           <NavItemMobile to="about" title="About" classes={classes} />
 
-          <NavItemMobile to="volunteer" title="Volunteer" classes={classes} />
+          <NavItemMobile to="programmes" title="Programmes" classes={classes} />
 
-          <NavItemMobile to="young_coder" title="Young Coders" classes={classes} />
-
-          <NavItemMobile to="cap" title="CAP" classes={classes} />
+          <NavItemMobile to="join_us" title="Join Us" classes={classes} />
         </List>
       </div>
     );
@@ -183,11 +181,9 @@ class NavBar extends Component {
 
               <NavItem title="About" to="about" classes={classes} />
 
-              <NavItem title="Volunteer" to="volunteer" classes={classes} />
+              <NavItem title="Programmes" to="programmes" classes={classes} />
 
-              <NavBoxItem title="Young Coders" to="young_coder" classes={classes} />
-
-              <NavBoxItem title="CAP" to="cap" classes={classes} />
+              <NavBoxItem title="Join Us" to="join_us" classes={classes} />
             </div>
 
             {/*  Mobile Nav Drawer */}
