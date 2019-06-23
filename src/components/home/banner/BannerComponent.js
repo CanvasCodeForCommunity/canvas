@@ -108,12 +108,6 @@ class BannerComponent extends Component {
             <Link to={'/' + btnOneLink} className={classes.links}>
               <Button className={classes.btn}>{btnOneText}</Button>
             </Link>
-
-            <Link to={'/' + btnTwoLink} className={classes.links}>
-              <Button className={`${classes.btn} ${classes.btnCTA}`}>
-                {btnTwoText}
-              </Button>
-            </Link>
           </div>
         </div>
       </div>
