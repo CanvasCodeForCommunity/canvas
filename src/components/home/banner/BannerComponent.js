@@ -8,6 +8,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 import BannerImage from '../../commons/BannerImage';
 import { primary, hoverPrimary } from '../../../utils/Colors';
+import TextTransition, { presets } from 'react-text-transition';
 
 const styles = theme => ({
   root: {
@@ -81,16 +82,23 @@ const styles = theme => ({
   },
 });
 
+const texts = ['{bits}', '1011'];
+
 class BannerComponent extends Component {
+  state = {
+    textIndex: 0,
+  };
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        textIndex: this.state.textIndex + 1,
+      });
+    }, 4000);
+  }
+
   render() {
-    const {
-      title,
-      description,
-      btnOneText,
-      btnOneLink,
-      btnTwoText,
-      btnTwoLink,
-    } = this.props;
+    const { title, description, btnOneText, btnOneLink } = this.props;
     const { classes } = this.props;
 
     return (
@@ -100,8 +108,20 @@ class BannerComponent extends Component {
           <Typography variant="h4" className={classes.title} gutterBottom>
             {title}
           </Typography>
-          <Typography variant="h6" className={classes.description}>
+          {/* <Typography variant="h6" className={classes.description}>
             {description}
+          </Typography> */}
+
+          <Typography variant="h6" className={classes.description}>
+            Every
+            <TextTransition
+              text={texts[this.state.textIndex % texts.length]}
+              spring={presets.gentle}
+              style={{ margin: '0 4px' }}
+              inline
+              overflow
+            />
+            counts.
           </Typography>
 
           <div>
@@ -119,8 +139,6 @@ BannerComponent.propTypes = {
   title: PropTypes.string.isRequired,
   btnOneText: PropTypes.string.isRequired,
   btnOneLink: PropTypes.string.isRequired,
-  btnTwoText: PropTypes.string.isRequired,
-  btnTwoLink: PropTypes.string.isRequired,
 };
 
 //make this component available to the app
