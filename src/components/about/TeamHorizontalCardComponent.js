@@ -10,22 +10,28 @@ import Image from '../commons/Image'
 const styles = theme => ({
   profileImage: {
     borderRadius: '50%',
-    width: '4.5rem',
-    height: '4.5rem',
+    width: '6rem',
+    height: '6rem',
     [theme.breakpoints.up('md')]: {
-      width: '5.5rem',
-      height: '5.5rem'
+      width: '6.75rem',
+      height: '6.75rem'
     },
   },
   name: {
     fontWeight: 700,
-    marginBottom: '0.75em',
     marginTop: '1.5em',
     [theme.breakpoints.up('sm')]: {
-      marginBottom: '1.25em',
       marginTop: 0
     }
   },
+  role: {
+    marginBottom: '0.75em',
+    color: '#9e9e9e',
+    fontStyle: 'italic',
+    [theme.breakpoints.up('sm')]: {
+      marginBottom: '1.25em',
+    }
+  }
 })
 
 class TeamHorizontalCardComponent extends Component {
@@ -34,15 +40,16 @@ class TeamHorizontalCardComponent extends Component {
 
     return (
       info.map((i, index) => (
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={9}>
           <div className={classes.root}>
             <Grid container>
               <Grid item sm={4} lg={3}>
                 <Image filename={i.node.frontmatter.profilePicture.relativePath} classProps={classes.profileImage} />
               </Grid>
 
-              <Grid item sm={8} lg={9} className={classes.info}>
+              <Grid item sm={8} lg={9}>
                 <Typography variant="body1" className={classes.name}>{i.node.frontmatter.name}</Typography>
+                <Typography variant="subtitle2" className={classes.role}>{i.node.frontmatter.role}</Typography>
                 <Typography variant="body2" className={classes.title}>{i.node.frontmatter.description}</Typography>
               </Grid>
             </Grid>

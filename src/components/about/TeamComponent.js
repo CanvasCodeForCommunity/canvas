@@ -50,8 +50,6 @@ class TeamComponent extends Component {
         <TeamVerticalCardComponent
           name={partner.node.frontmatter.name}
           profilePicture={partner.node.frontmatter.profilePicture.relativePath}
-          club={partner.node.frontmatter.club}
-          role={partner.node.frontmatter.role}
         />
       ))
     )

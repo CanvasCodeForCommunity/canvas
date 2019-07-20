@@ -42,6 +42,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             name
+            role
             description
             profilePicture {
               relativePath
@@ -60,6 +61,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             name
+            role
             description
             profilePicture {
               relativePath
@@ -82,8 +84,6 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             name
-            club
-            role
             profilePicture {
               relativePath
             }

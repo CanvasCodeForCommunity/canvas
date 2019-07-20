@@ -36,7 +36,6 @@ const styles = theme => ({
       height: '5.5rem'
     },
   },
-
 })
 
 class TeamVerticalCardComponent extends Component {
@@ -47,13 +46,11 @@ class TeamVerticalCardComponent extends Component {
     return (
       <Grid item xs={6} sm={3} className={classes.root}>
         <div className={classes.profilePictureContainer}>
-          <Image filename={profilePicture} classProps={classes.profilePicture} />
+          <Image filename={profilePicture} classProps={classes.profilePicture} classImageStyle={{ objectFit: 'contain' }} />
         </div>
 
         <div className={classes.description}>
           <Typography variant="body1" className={classes.name} gutterBottom>{name}</Typography>
-          <Typography variant="caption" className={classes.club} gutterBottom>{club}</Typography>
-          <Typography variant="caption" className={classes.role} gutterBottom>{role}</Typography>
         </div>
       </Grid>
     );
@@ -63,8 +60,6 @@ class TeamVerticalCardComponent extends Component {
 TeamVerticalCardComponent.propTypes = {
   profilePicture: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
-  club: PropTypes.string.isRequired
 };
 
 export default withStyles(styles)(TeamVerticalCardComponent);
