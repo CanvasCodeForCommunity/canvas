@@ -12,7 +12,7 @@ const styles = theme => ({
     padding: '3rem 2rem 3rem 2rem', //top right bottom left
     textAlign: 'center',
     [theme.breakpoints.up('md')]: {
-      padding: '3rem 6rem 3rem 6rem', //top right bottom left
+      padding: '0rem 0rem 0rem 6rem', //top right bottom left
     },
   },
   textGrid: {
@@ -23,8 +23,6 @@ const styles = theme => ({
   title: {
     color: 'black',
     fontSize: '1rem',
-
-    // fontWeight: 700,
     [theme.breakpoints.up('md')]: {
       fontSize: '1rem',
       lineHeight: 1.5,
@@ -32,6 +30,8 @@ const styles = theme => ({
   },
   imageGrid: {
     display: 'none',
+    maxHeight: '500px',
+    paddingLeft: '50px',
     [theme.breakpoints.up('md')]: {
       display: 'flex',
       flexDirection: 'column',
@@ -39,13 +39,12 @@ const styles = theme => ({
     },
   },
   iconImage: {
-    maxHeight: '85%',
     display: 'none',
     [theme.breakpoints.up('md')]: {
       display: 'flex',
     },
     '& img': {
-      objectFit: 'contain !important',
+      objectFit: 'cover !important',
     },
   },
 });
@@ -72,7 +71,7 @@ class AboutUsComponent extends Component {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={8} className={classes.imageGrid}>
-            <Image filename={'macbookpro.png'} classProps={classes.iconImage} />
+            <Image filename={'about_us.jpg'} classProps={classes.iconImage} />
           </Grid>
         </Grid>
       </div>

@@ -1,5 +1,5 @@
 ---
 name: "Chee Chiu"
-quote: "“Techmums changed my life! The tech skills I learnt on the #techmums program have made my business more successful.”"
-cover_img: "51.jpg"
+quote: "“A firm believer in education, I enjoy teaching and sharing the knowledge with the students in the class. Developing the lessons and teaching also allows me to learn new things and deepens my knowledge. ”"
+cover_img: "p4.png"
 ---
