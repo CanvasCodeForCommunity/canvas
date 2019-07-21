@@ -8,7 +8,8 @@ import { withStyles } from '@material-ui/core/styles';
 
 import BannerImage from '../../commons/BannerImage';
 import { primary, hoverPrimary } from '../../../utils/Colors';
-import TextTransition, { presets } from 'react-text-transition';
+import ReactRotatingText from 'react-rotating-text';
+import '../../../css/typing.css';
 
 const styles = theme => ({
   root: {
@@ -82,21 +83,7 @@ const styles = theme => ({
   },
 });
 
-const texts = ['{bits}', '1011'];
-
 class BannerComponent extends Component {
-  state = {
-    textIndex: 0,
-  };
-
-  componentDidMount() {
-    setInterval(() => {
-      this.setState({
-        textIndex: this.state.textIndex + 1,
-      });
-    }, 4000);
-  }
-
   render() {
     const { title, description, btnOneText, btnOneLink } = this.props;
     const { classes } = this.props;
@@ -113,15 +100,9 @@ class BannerComponent extends Component {
           </Typography> */}
 
           <Typography variant="h6" className={classes.description}>
-            Every
-            <TextTransition
-              text={texts[this.state.textIndex % texts.length]}
-              spring={presets.gentle}
-              style={{ margin: '0 4px' }}
-              inline
-              overflow
-            />
-            counts.
+            {'Every '}
+            <ReactRotatingText items={['{bids}', '10110']} />
+             {' counts.'}
           </Typography>
 
           <div>
