@@ -10,37 +10,25 @@ import Image from '../commons/Image'
 const styles = theme => ({
   root: {
     marginBottom: '1.25rem',
-    [theme.breakpoints.up('sm')]: {
-      textAlign: 'center',
-      marginBottom: '1.25rem'
-    }
+    textAlign: 'center',
   },
   profilePictureContainer: {
-    width: '4.5rem',
-    height: '4.5rem',
-    marginBottom: '1.25rem',
-    [theme.breakpoints.up('sm')]: {
-      margin: '0 auto 1.25rem auto',
-    },
+    width: '5.5rem',
+    height: '5.5rem',
+    margin: '0 auto 1.25rem auto',
     [theme.breakpoints.up('md')]: {
-      width: '5.5rem',
-      height: '5.5rem'
+      width: '6.25rem',
+      height: '6.25rem'
     },
   },
   profilePicture: {
     borderRadius: '50%',
-    width: '4.5rem',
-    height: '4.5rem',
-    [theme.breakpoints.up('md')]: {
-      width: '5.5rem',
-      height: '5.5rem'
-    },
   },
 })
 
 class TeamVerticalCardComponent extends Component {
   render() {
-    const { name, profilePicture, club, role } = this.props;
+    const { name, profilePicture } = this.props;
     const { classes } = this.props;
 
     return (

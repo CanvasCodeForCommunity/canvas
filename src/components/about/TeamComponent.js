@@ -47,7 +47,7 @@ class TeamComponent extends Component {
 
     return (
       partners.map((partner, index) => (
-        <TeamVerticalCardComponent
+        <TeamVerticalCardComponent key={index}
           name={partner.node.frontmatter.name}
           profilePicture={partner.node.frontmatter.profilePicture.relativePath}
         />

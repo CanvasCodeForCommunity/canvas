@@ -40,7 +40,7 @@ class TeamHorizontalCardComponent extends Component {
 
     return (
       info.map((i, index) => (
-        <Grid item xs={12} sm={9}>
+        <Grid item xs={12} sm={9} key={index}>
           <div className={classes.root}>
             <Grid container>
               <Grid item sm={4} lg={3}>
@@ -50,11 +50,24 @@ class TeamHorizontalCardComponent extends Component {
               <Grid item sm={8} lg={9}>
                 <Typography variant="body1" className={classes.name}>{i.node.frontmatter.name}</Typography>
                 <Typography variant="subtitle2" className={classes.role}>{i.node.frontmatter.role}</Typography>
-                <Typography variant="body2" className={classes.title}>{i.node.frontmatter.description}</Typography>
+
+                {
+                  i.node.frontmatter.description.split('\n').map(function (item, idx) {
+                    return (
+                      <React.Fragment key={idx}>
+                        <Typography variant="body2">
+                          {item}
+                        </Typography>
+                        <br />
+                      </React.Fragment>
+                    )
+                  })
+                }
+
               </Grid>
             </Grid>
           </div>
-        </Grid>
+        </Grid >
       ))
     )
   }
