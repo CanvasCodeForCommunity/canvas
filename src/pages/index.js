@@ -20,15 +20,19 @@ const IndexPage = props => (
   <Layout>
     <SEO
       title="CodeForCommunity"
-      keywords={['canvas', 'volunteer', 'singapore', 'computing', 'codeforcommunity']}
+      keywords={[
+        'canvas',
+        'volunteer',
+        'singapore',
+        'computing',
+        'codeforcommunity',
+      ]}
     />
     <BannerComponent
       title="Enriching the Community with Computing."
-      description="Every bits count."
+      description="Every {bits} counts."
       btnOneText="Browse Events"
       btnOneLink="events"
-      btnTwoText="Contact Us"
-      btnTwoLink="contact-us"
     />
     <SignUpComponent
       title="Sign up NOW to volunteer for the upcoming programs."
@@ -75,7 +79,6 @@ export const pageQuery = graphql`
         node {
           relativePath
           name
-          
         }
       }
     }

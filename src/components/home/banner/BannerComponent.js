@@ -7,7 +7,9 @@ import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
 import BannerImage from '../../commons/BannerImage';
-import { primary, hoverPrimary } from '../../../utils/Colors'
+import { primary, hoverPrimary } from '../../../utils/Colors';
+import ReactRotatingText from 'react-rotating-text';
+import '../../../css/typing.css';
 
 const styles = theme => ({
   root: {
@@ -38,7 +40,7 @@ const styles = theme => ({
     fontSize: '1.75rem',
     [theme.breakpoints.up('md')]: {
       fontSize: '2.125rem',
-      lineHeight: 1.5
+      lineHeight: 1.5,
     },
   },
   description: {
@@ -57,7 +59,7 @@ const styles = theme => ({
     padding: '8px 15px',
     textTransform: 'capitalize',
     '&:hover': {
-      backgroundColor: 'rgba(255, 255, 255, 0.8)'
+      backgroundColor: 'rgba(255, 255, 255, 0.8)',
     },
     [theme.breakpoints.up('md')]: {
       padding: '10px 25px',
@@ -69,7 +71,7 @@ const styles = theme => ({
     color: 'white',
     marginRight: 0,
     '&:hover': {
-      backgroundColor: hoverPrimary
+      backgroundColor: hoverPrimary,
     },
     [theme.breakpoints.up('md')]: {
       marginRight: 15,
@@ -77,29 +79,35 @@ const styles = theme => ({
   },
   links: {
     textDecoration: 'none',
-    color: 'black'
+    color: 'black',
   },
 });
 
 class BannerComponent extends Component {
-
   render() {
-    const { title, description, btnOneText, btnOneLink, btnTwoText, btnTwoLink } = this.props;
+    const { title, description, btnOneText, btnOneLink } = this.props;
     const { classes } = this.props;
-    
+
     return (
       <div className={classes.root}>
         <BannerImage filename={'home_cover.jpg'} classProps={classes.bgImg} />
         <div className={classes.info}>
-          <Typography variant="h4" className={classes.title} gutterBottom>{title}</Typography>
-          <Typography variant="h6" className={classes.description}>{description}</Typography>
-          <div>
-            <Link to={"/" + btnOneLink} className={classes.links}>
-              <Button className={classes.btn}>{btnOneText}</Button>
-            </Link>
+          <Typography variant="h4" className={classes.title} gutterBottom>
+            {title}
+          </Typography>
+          {/* <Typography variant="h6" className={classes.description}>
+            {description}
+          </Typography> */}
 
-            <Link to={"/" + btnTwoLink} className={classes.links}>
-              <Button className={`${classes.btn} ${classes.btnCTA}`}>{btnTwoText}</Button>
+          <Typography variant="h6" className={classes.description}>
+            {'Every '}
+            <ReactRotatingText items={['{bids}', '10110']} />
+             {' counts.'}
+          </Typography>
+
+          <div>
+            <Link to={'/' + btnOneLink} className={classes.links}>
+              <Button className={classes.btn}>{btnOneText}</Button>
             </Link>
           </div>
         </div>
@@ -112,8 +120,6 @@ BannerComponent.propTypes = {
   title: PropTypes.string.isRequired,
   btnOneText: PropTypes.string.isRequired,
   btnOneLink: PropTypes.string.isRequired,
-  btnTwoText: PropTypes.string.isRequired,
-  btnTwoLink: PropTypes.string.isRequired,
 };
 
 //make this component available to the app
