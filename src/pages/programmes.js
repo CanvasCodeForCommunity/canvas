@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import BannerComponent from '../components/volunteer/BannerComponent';
 import RolesComponent from '../components/volunteer/RolesComponent';
+import VolunteerProgramsComponent from '../components/volunteer/VolunteerProgramsComponent';
 import UpcomingProgramsComponent from '../components/volunteer/UpcomingProgramsComponent';
 import PastProgramsComponent from '../components/volunteer/PastProgramsComponent';
 import FooterComponent from '../components/home/footer/FooterComponent'
@@ -22,6 +23,7 @@ class VolunteerPage extends Component {
 
         <BannerComponent />
         <RolesComponent roles={this.props.data.roles} />
+        <VolunteerProgramsComponent data={this.props.data.volunteerPrograms} />
         <UpcomingProgramsComponent programs={this.props.data.upcomingPrograms} />
         <PastProgramsComponent programs={this.props.data.pastPrograms} />
         <FooterComponent data={this.props.data.site} />
@@ -80,6 +82,26 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    volunteerPrograms: allMarkdownRemark(
+      filter: { 
+        fileAbsolutePath: {regex: "/volunteer_programs/"} 
+      }
+    ) {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
+            image {
+              relativePath
+            }
+            description
+          }
+        }
+      }
+    }
+
     site {
       buildTimeZone
     }
