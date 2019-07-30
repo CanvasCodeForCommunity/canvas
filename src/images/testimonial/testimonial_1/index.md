@@ -1,5 +1,5 @@
 ---
-name: "Alexa"
-quote: "“I am so grateful for the course because as a direct result of our #Techmums training, I landed a new job.”"
-cover_img: "20.jpg"
+name: "Van"
+quote: "“Being a part of Code for Community is a joy. I learn new things and perspectives through every interaction with the students, staff and volunteers.”"
+cover_img: "p1.png"
 ---

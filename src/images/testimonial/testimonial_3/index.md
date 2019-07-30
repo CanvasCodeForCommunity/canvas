@@ -1,5 +1,5 @@
 ---
-name: "Cylde"
-quote: "“All schools should run #techmums! The mums who took the course loved the collegiate atmosphere and the very real skills they gained that they could then use in the workplace, in job interviews and in helping support their own children.”"
-cover_img: "5.jpg"
+name: "Alexa"
+quote: "“There is potential in every kid to become active creator of technology. This strikes me every time when I see the joy and excitement in the eyes of our students!”"
+cover_img: "p3.png"
 ---
