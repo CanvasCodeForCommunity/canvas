@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
 import Image from '../commons/Image';
-import { primary, hoverPrimary } from '../../utils/Colors';
+import { primary, hoverPrimary, royalBlue } from '../../utils/Colors';
 
 const ExpansionPanel = withStyles({
   root: {
@@ -49,6 +49,12 @@ const styles = theme => ({
   },
   description: {
     textAlign: 'justify',
+    '& a': {
+      color: royalBlue,
+    },
+    '& a:hover': {
+      textDecoration: 'none',
+    },
   },
   btnAlign: {
     textAlign: 'center',
@@ -68,7 +74,6 @@ const styles = theme => ({
   },
   links: {
     textDecoration: 'none',
-    color: 'black',
   },
   programImage: {
     width: '100%',
@@ -84,13 +89,13 @@ const styles = theme => ({
 
 class VolunteerProgramsComponent extends Component {
   programsComponent = (classes, programData) => {
-    const program = programData.edges;
+    const programs = programData.edges;
 
-    return program.map((coder, index) => (
+    return programs.map((program, index) => (
       <Grid item xs={12} sm={6} md={4} xl={3} key={index}>
         <Card>
           <Image
-            filename={coder.node.frontmatter.image.relativePath}
+            filename={program.node.frontmatter.image.relativePath}
             classProps={classes.programImage}
           />
           <ExpansionPanel>
@@ -101,7 +106,7 @@ class VolunteerProgramsComponent extends Component {
               id="panel1a-header"
             >
               <Typography variant="h7" noWrap>
-                {coder.node.frontmatter.title}
+                {program.node.frontmatter.title}
               </Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
@@ -110,7 +115,7 @@ class VolunteerProgramsComponent extends Component {
                 variant="body2"
                 gutterBottom
               >
-                {coder.node.frontmatter.description}
+                <div dangerouslySetInnerHTML={{ __html: program.node.html }} />
               </Typography>
             </ExpansionPanelDetails>
             <Typography className={classes.btnAlign}>

@@ -90,6 +90,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          html
           frontmatter {
             title
             image {
