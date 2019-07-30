@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { graphql } from 'gatsby';
 
 import BannerComponent from '../components/about/BannerComponent';
 import TeamComponent from '../components/about/TeamComponent';
@@ -42,6 +43,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             name
+            role
             description
             profilePicture {
               relativePath
@@ -60,6 +62,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             name
+            role
             description
             profilePicture {
               relativePath
@@ -82,8 +85,6 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             name
-            club
-            role
             profilePicture {
               relativePath
             }

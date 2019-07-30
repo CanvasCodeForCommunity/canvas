@@ -10,50 +10,35 @@ import Image from '../commons/Image'
 const styles = theme => ({
   root: {
     marginBottom: '1.25rem',
-    [theme.breakpoints.up('sm')]: {
-      textAlign: 'center',
-      marginBottom: '1.25rem'
-    }
+    textAlign: 'center',
   },
   profilePictureContainer: {
-    width: '4.5rem',
-    height: '4.5rem',
-    marginBottom: '1.25rem',
-    [theme.breakpoints.up('sm')]: {
-      margin: '0 auto 1.25rem auto',
-    },
+    width: '5.5rem',
+    height: '5.5rem',
+    margin: '0 auto 1.25rem auto',
     [theme.breakpoints.up('md')]: {
-      width: '5.5rem',
-      height: '5.5rem'
+      width: '6.25rem',
+      height: '6.25rem'
     },
   },
   profilePicture: {
     borderRadius: '50%',
-    width: '4.5rem',
-    height: '4.5rem',
-    [theme.breakpoints.up('md')]: {
-      width: '5.5rem',
-      height: '5.5rem'
-    },
   },
-
 })
 
 class TeamVerticalCardComponent extends Component {
   render() {
-    const { name, profilePicture, club, role } = this.props;
+    const { name, profilePicture } = this.props;
     const { classes } = this.props;
 
     return (
       <Grid item xs={6} sm={3} className={classes.root}>
         <div className={classes.profilePictureContainer}>
-          <Image filename={profilePicture} classProps={classes.profilePicture} />
+          <Image filename={profilePicture} classProps={classes.profilePicture} classImageStyle={{ objectFit: 'contain' }} />
         </div>
 
         <div className={classes.description}>
           <Typography variant="body1" className={classes.name} gutterBottom>{name}</Typography>
-          <Typography variant="caption" className={classes.club} gutterBottom>{club}</Typography>
-          <Typography variant="caption" className={classes.role} gutterBottom>{role}</Typography>
         </div>
       </Grid>
     );
@@ -63,8 +48,6 @@ class TeamVerticalCardComponent extends Component {
 TeamVerticalCardComponent.propTypes = {
   profilePicture: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
-  club: PropTypes.string.isRequired
 };
 
 export default withStyles(styles)(TeamVerticalCardComponent);
