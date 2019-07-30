@@ -105,7 +105,7 @@ class VolunteerProgramsComponent extends Component {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography variant="h7" noWrap>
+              <Typography variant="body1" noWrap>
                 {program.node.frontmatter.title}
               </Typography>
             </ExpansionPanelSummary>
