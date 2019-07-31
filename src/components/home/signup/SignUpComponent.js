@@ -59,7 +59,7 @@ class SignUpComponent extends Component {
           {title}
         </Typography>
         <Button className={classes.btn}>
-          <a href={btnLink} className={classes.links} target="_blank">
+          <a href={btnLink} className={classes.links} target="_blank" rel="noopener noreferrer">
             {btnText}
           </a>
         </Button>
