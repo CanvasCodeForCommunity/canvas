@@ -30,7 +30,6 @@ const IndexPage = props => (
     />
     <BannerComponent
       title="Enriching the Community with Computing."
-      description="Every {bits} counts."
       btnOneText="Browse Events"
       btnOneLink="events"
     />
