@@ -91,7 +91,12 @@ class CapComponent extends Component {
           <br />
           CAP - Code to Achieve Potential is a program designed in collaboration
           with{' '}
-          <a href="https://www.autism.org.sg" target="_blank" className={classes.a}>
+          <a
+            href="https://www.autism.org.sg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes.a}
+          >
             Autism Resource Centre, Singapore
           </a>{' '}
           to create code specific learning opportunities for youth with Autism.{' '}
