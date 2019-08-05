@@ -113,14 +113,6 @@ class BannerComponent extends Component {
               self-organised
             </Typography>
 
-            <p>
-              <Button className={classes.joinUsBtn}>
-                <a href="#" className={classes.links}>
-                  Join Us
-                </a>
-              </Button>
-            </p>
-
             <div>
               <Link to={'/' + btnOneLink} className={classes.links}>
                 <Button className={classes.btn}>{btnOneText}</Button>
