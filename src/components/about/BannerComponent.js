@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 import BannerImage from '../commons/BannerImage';
-import { whiteSmoke } from '../../utils/Colors'
+import { whiteSmoke } from '../../utils/Colors';
 
 const styles = theme => ({
   root: {
@@ -31,17 +31,17 @@ const styles = theme => ({
   },
   info: {
     marginLeft: '2rem',
-    marginRight: '2rem'
+    marginRight: '2rem',
   },
   title: {
     color: whiteSmoke,
-    fontWeight: 700
+    fontWeight: 700,
   },
   description: {
     marginTop: '2em',
-    color: whiteSmoke
-  }
-})
+    color: whiteSmoke,
+  },
+});
 
 class BannerComponent extends Component {
   render() {
@@ -51,10 +51,14 @@ class BannerComponent extends Component {
       <div className={classes.root}>
         <BannerImage filename={'about_cover.jpg'} classProps={classes.bgImg} />
         <div className={classes.info}>
-          <Typography variant="h4" className={classes.title} gutterBottom>Welcome!</Typography>
+          <Typography variant="h4" className={classes.title} gutterBottom>
+            Welcome!
+          </Typography>
           <Typography variant="h6" className={classes.description}>
-            CodeForCommunity is an umbrella project of SoC Family, a network of SoC Students, Staff and Alumni who take great pride in helping develop the projects for underserved communities.
-                    </Typography>
+            CodeForCommunity is an umbrella project of SoC Family, a network of
+            SoC Students, Staff and Alumni who take great pride in helping
+            develop the projects for underserved communities.
+          </Typography>
         </div>
       </div>
     );

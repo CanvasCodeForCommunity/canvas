@@ -85,7 +85,7 @@ const styles = theme => ({
 
 class BannerComponent extends Component {
   render() {
-    const { title, description, btnOneText, btnOneLink } = this.props;
+    const { title, btnOneText, btnOneLink } = this.props;
     const { classes } = this.props;
 
     return (
@@ -95,9 +95,6 @@ class BannerComponent extends Component {
           <Typography variant="h4" className={classes.title} gutterBottom>
             {title}
           </Typography>
-          {/* <Typography variant="h6" className={classes.description}>
-            {description}
-          </Typography> */}
 
           <Typography variant="h6" className={classes.description}>
             {'Every '}
@@ -105,11 +102,7 @@ class BannerComponent extends Component {
              {' counts.'}
           </Typography>
 
-          <div>
-            <Link to={'/' + btnOneLink} className={classes.links}>
-              <Button className={classes.btn}>{btnOneText}</Button>
-            </Link>
-          </div>
+          
         </div>
       </div>
     );

@@ -1,39 +1,44 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 
-import BannerComponent from '../components/volunteer/BannerComponent';
-import RolesComponent from '../components/volunteer/RolesComponent';
-import VolunteerProgramsComponent from '../components/volunteer/VolunteerProgramsComponent';
-import UpcomingProgramsComponent from '../components/volunteer/UpcomingProgramsComponent';
-import PastProgramsComponent from '../components/volunteer/PastProgramsComponent';
-import FooterComponent from '../components/home/footer/FooterComponent'
+import BannerComponent from '../components/programmes/BannerComponent';
+import RolesComponent from '../components/programmes/RolesComponent';
+import VolunteerProgramsComponent from '../components/programmes/VolunteerProgramsComponent';
+import UpcomingProgramsComponent from '../components/programmes/UpcomingProgramsComponent';
+import PastProgramsComponent from '../components/programmes/PastProgramsComponent';
+import FooterComponent from '../components/home/footer/FooterComponent';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import withRoot from '../components/withRoot';
 
-class VolunteerPage extends Component {
+class ProgrammesPage extends Component {
   render() {
     return (
       <Layout>
         <SEO
           title="Volunteer"
-          keywords={['canvas', 'volunteer', 'singapore', 'computing', 'NUS']}
+          keywords={['canvas', 'programmes', 'singapore', 'computing', 'NUS']}
         />
 
-        <BannerComponent />
+        <BannerComponent
+          title="Enriching the Community with Computing."
+          btnOneText="Browse Events"
+          btnOneLink="events"
+        />
         <RolesComponent roles={this.props.data.roles} />
         <VolunteerProgramsComponent data={this.props.data.volunteerPrograms} />
-        <UpcomingProgramsComponent programs={this.props.data.upcomingPrograms} />
+        <UpcomingProgramsComponent
+          programs={this.props.data.upcomingPrograms}
+        />
         <PastProgramsComponent programs={this.props.data.pastPrograms} />
         <FooterComponent data={this.props.data.site} />
-
       </Layout>
     );
   }
 }
 
-export default withRoot(VolunteerPage);
+export default withRoot(ProgrammesPage);
 
 // Query for Roles and Past Events
 export const pageQuery = graphql`
@@ -45,12 +50,10 @@ export const pageQuery = graphql`
           description
         }
       }
-    }  
-  
-  upcomingPrograms: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: {regex: "/upcoming_programs/"}
-      }
+    }
+
+    upcomingPrograms: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/upcoming_programs/" } }
     ) {
       edges {
         node {
@@ -65,11 +68,9 @@ export const pageQuery = graphql`
         }
       }
     }
-  
-  pastPrograms: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: {regex: "/past_programs/"}
-      }
+
+    pastPrograms: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/past_programs/" } }
     ) {
       edges {
         node {
@@ -84,9 +85,7 @@ export const pageQuery = graphql`
     }
 
     volunteerPrograms: allMarkdownRemark(
-      filter: { 
-        fileAbsolutePath: {regex: "/volunteer_programs/"} 
-      }
+      filter: { fileAbsolutePath: { regex: "/volunteer_programs/" } }
     ) {
       edges {
         node {

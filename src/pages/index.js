@@ -28,12 +28,7 @@ const IndexPage = props => (
         'codeforcommunity',
       ]}
     />
-    <BannerComponent
-      title="Enriching the Community with Computing."
-      description="Every {bits} counts."
-      btnOneText="Browse Events"
-      btnOneLink="events"
-    />
+    <BannerComponent title="Enriching the Community with Computing." />
     <SignUpComponent
       title="Sign up NOW to volunteer for the upcoming programs."
       btnText="Join us"

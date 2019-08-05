@@ -162,7 +162,7 @@ class NavBar extends Component {
             {/* Site icon */}
             <Button className={classes.siteIcon} color="inherit">
               <Link to="/" className={classes.links}>
-                <img src={codeForCommunity} />
+                <img src={codeForCommunity} alt="Code for Community"/>
               </Link>
             </Button>
 
