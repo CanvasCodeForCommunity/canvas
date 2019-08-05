@@ -102,11 +102,7 @@ class BannerComponent extends Component {
              {' counts.'}
           </Typography>
 
-          <div>
-            <Link to={'/' + btnOneLink} className={classes.links}>
-              <Button className={classes.btn}>{btnOneText}</Button>
-            </Link>
-          </div>
+          
         </div>
       </div>
     );

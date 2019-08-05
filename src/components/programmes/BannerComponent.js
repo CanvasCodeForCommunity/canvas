@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'gatsby';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
@@ -56,6 +56,21 @@ const styles = theme => ({
       backgroundColor: hoverPrimary,
     },
   },
+  btn: {
+    backgroundColor: primary,
+    color: 'white',
+    marginRight: 15,
+    marginBottom: 15,
+    padding: '8px 15px',
+    textTransform: 'capitalize',
+    '&:hover': {
+      backgroundColor: hoverPrimary,
+    },
+    [theme.breakpoints.up('md')]: {
+      padding: '10px 25px',
+      marginRight: 15,
+    },
+  },
   links: {
     textDecoration: 'none',
     color: 'black',
@@ -65,6 +80,7 @@ const styles = theme => ({
 class BannerComponent extends Component {
   render() {
     const { classes } = this.props;
+    const { title, btnOneText, btnOneLink } = this.props;
 
     return (
       <div className={classes.root}>
@@ -104,6 +120,12 @@ class BannerComponent extends Component {
                 </a>
               </Button>
             </p>
+
+            <div>
+              <Link to={'/' + btnOneLink} className={classes.links}>
+                <Button className={classes.btn}>{btnOneText}</Button>
+              </Link>
+            </div>
           </Grid>
 
           <Grid item xs={12} md={6} className={classes.bgImgContainer}>
